@@ -1,12 +1,14 @@
 <?php
 	session_start();
+	require("ConnectionToDB.php");
+	require("User.php");
 ?>
 <!doctype html>
 
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Scarica gratis GARAGE Template html/css - Web Domus Italia - Web Agency </title>
+	<title>Delta Auto Spare Parts </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -40,7 +42,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
-			</div>	 
+			</div>
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
@@ -60,45 +62,37 @@
 						<li><a href="#">price list</a></li>
 						<li><a href="#">spare orders</a></li>
 						<li><a href="#">total income </a></li>
-						
+
 					</ul>
 				</li>
 				<li>
 					<a href="contact.html">CONTACT</a>
- 
+
 				</li>
 			</ul>
 		</div>
 	</nav>
 </div>
 <div style=" text-align: center; padding-top:30px;">
+}
 <?php
-				   		$conn = mysqli_connect("localhost", "root", "", "delta");
-						if($conn == false){
-							die(mysqli_connect_error());
-						}
-						
-						$select_sql = "SELECT ID,Fname,Lname FROM user";
-						$result = mysqli_query($conn, $select_sql);
-						for ($i=0; $i < $result->num_rows; $i++) { 
-							$row = $result->fetch_assoc();
-							echo "Id: " . $row["ID"]. " - Name: " . $row["Fname"]. " Lastname:" . $row["Lname"]. "<br>";
-						}
-						
-				   	?>
-		
-				   
-</div>				   
+$user = new User;
+
+$user->selectAllUsersInDb();
+ 	?>
+
+
+</div>
 <div style=" text-align: center; padding-top:50px;">
 <a href="addE.php"> <button type="button" value="add">Add</button> </a>
 <a href="updateE.php"><button type="button" value="edit">update</button> </a>
 <a href="deletE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
-  
+
 
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
 <script type="text/javascript" src="source/js/isotope.js"></script>
-<script type="text/javascript" src="source/js/myscript.js"></script> 
+<script type="text/javascript" src="source/js/myscript.js"></script>
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 </body>

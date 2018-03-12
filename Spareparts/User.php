@@ -13,7 +13,7 @@ require_once "ConnectionToDB.php";
   public $mobile;
   public $email;
   public $username;
-  public $password;
+  public /*sha1()*/$password;
 //  public $usertype_id;
 
    function __construct(){
@@ -99,7 +99,7 @@ if($sql){
      return $result;
    }
 }
-  /* function selectAllUsersInDb(){
+   function selectAllUsersInDb(){
      $db = new dbconnect;
      $sql = "SELECT * FROM `user` ";
      $result = $db->executesql($sql);
@@ -113,11 +113,11 @@ if($sql){
        $this->email = $row['Email'];
        $this->username = $row['Username'];
        $this->password = $row['Password'];
-       $this->usertype_id= $row['UserTypeID'];
+       //$this->usertype_id= $row['UserTypeID'];
      }
    }
 
- }*/
+
 
 
 ?>
