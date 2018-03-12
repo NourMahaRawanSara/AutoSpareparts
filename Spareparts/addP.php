@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Scarica gratis GARAGE Template html/css - Web Domus Italia - Web Agency </title>
+	<title>Delta Auto Spare Parts </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -53,20 +53,21 @@
 		 <form method="POST">
 <div id="form1">
 <strong>Picture:<strong><br>
-<input type="text" name="fname" placeholder="Firstname" required><br>
+<input type="image" name="pic" placeholder="upload picture" required><br>
 
-<strong>Last Name:<strong><br>
-<input type="text" name="Lname" placeholder="Lastname" required><br>
+<strong>OEM:<strong><br>
+<input type="text" name="OEM" placeholder="OEM" required><br>
 
-<strong>Email:<strong><br>
- <input type="email" name="Email" placeholder="Email" required><br>
+<strong>Internal Code:<strong><br>
+ <input type="email" name="IC" placeholder="Internal Code" required><br>
 
- <strong>Username:<strong><br>
-	<input type="text" name="Username" placeholder="Username" required><br>
+ <strong>Company Provider Code:<strong><br>
+	<input type="text" name="Pcode" placeholder="Exporter Code" required><br>
 
 
- <strong>Password:<strong><br>
-	 <input type="password" name="password" placeholder="Password" required><br>
+ <strong>Is the item corrupted?:<strong><br>Yes
+	 <input type="radio" name="yes" required><br>NO
+	 <input type="radio" name="No" required><br>
 
 	 <strong>Mobile Number:<strong><br>
 		 <input type="tel" name="Mobile" placeholder="Mobile Number" required><br>
