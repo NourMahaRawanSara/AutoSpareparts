@@ -44,19 +44,24 @@ if($sql){
    $res = mysqli_query($conn,$sql);
    header("Location: index.html");
  }
-   }
 
-  /* function updateMyDB(){
-     $this->$db->connect();
-     $sql = "UPDATE `user`
-             SET `Email` = '$email'
-             WHERE `id` = '$id'
-             ";
-     $result = $this->$db->executesql($sql);
-     return $result;
-   }
 
-   function selectAllUsersInDb(){
+public function updateMyDB($pic,$OEM,$InternalCode,$PCode,$corr,$CountryOfOrigin,$price,$id){
+    $db = new dbconnect;
+    $db->connect();
+
+    $sql = "UPDATE sparepart SET `Picture`='$pic',
+ `OEM`='$OEM',`InternalCode`='$InternalCode',
+  `CompanyProviderCode`='$PCode',
+  `IsCorrupted` = '$corr',
+  `CountryOfOrigin`='$CountryOfOrigin',
+  `Price`='$price' WHERE `id` = '$id' ";
+
+    $result =$db->executesql($sql);
+    return $result;
+   }
+}
+   /*function selectAllUsersInDb(){
      $db = new dbconnect;
      $sql = "SELECT * FROM `user` ";
      $result = $db->executesql($sql);

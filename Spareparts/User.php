@@ -89,18 +89,16 @@ if($sql){
    $res = mysqli_query($conn,$sql);
    header("Location: index.html");
  }
-   }
 
-   public function updateMyDB($firstname,$lastname,$DOB,$mobile,$email,$username,$password){
-     $this->$db->connect();
-     $sql = "UPDATE `user`
-             SET `Email` = '$email'
-             WHERE `id` = '$id'
-             ";
-     $result = $this->$db->executesql($sql);
+   public function updateMyDB($firstname,$lastname,$DOB,$mobile,$email,$username,$password,$id){
+     $db = new dbconnect;
+     $db->connect();
+     $sql = "UPDATE user SET `Fname`='$firstname',
+`Lname`='$lastname',`DateOfBirth`='$DOB', `Mobile`='$mobile',`Email` = '$email',`Username`='$username',`password`='$password' WHERE `id` = '$id' ";
+     $result =$db->executesql($sql);
      return $result;
    }
-
+}
   /* function selectAllUsersInDb(){
      $db = new dbconnect;
      $sql = "SELECT * FROM `user` ";
@@ -120,5 +118,6 @@ if($sql){
    }
 
  }*/
+
 
 ?>

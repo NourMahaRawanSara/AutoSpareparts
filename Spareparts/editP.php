@@ -1,6 +1,30 @@
 <?php
   session_start();
-  require("ConnectionToDB.php");
+require_once "ConnectionToDB.php";
+  require("Product.php");
+  $db = new dbconnect;
+  $conn = $db->connect();
+
+
+  		/*if($row=mysqli_fetch_array($result)){
+
+  			$pic = $row["Picture"];
+        $OEM = $row["OEM"];
+        $InternalCode = $row["InternalCode"];
+        $PCode = $row["CompanyProviderCode"];
+        $corr = $row["IsCorrupted"];
+        $CountryOfOrigin = $row["CountryOfOrigin"];
+        $price = $row["Price"];
+
+
+
+
+  		}
+*/
+$sql="select * from `sparepart` WHERE 1";
+$result =$db->executesql($sql);
+
+
 ?>
 <!DOCTYPE html>
     <head>
@@ -9,62 +33,79 @@
 <html>
     <body>
         <form method="post" action="">
+          <div id="form1">
+          	<strong>Picture:<strong><br>
+          		<input type="file" name="pic" accept="image/*"id="img">
+          <br>
+          <strong>OEM:<strong><br>
+        <select name='prouctIDList'>
+          <?php
+          foreach ($result as  $value) {
+            $id=$value['ID'];
+            $OEM=$value['OEM'];
+            echo "<option value='$id'>$OEM</option>";
 
-          <strong>First Name:<strong><br>
-         <input type="text" name="fname"  value="<?php echo $_SESSION['Fname']; ?>" required><br>
+          }
+          ?>
+        </select>
+        <br>
 
-        <strong>Last Name:<strong><br>
-         <input type="text" name="Lname" placeholder="Lastname"value="<?php echo $_SESSION['Lname']; ?>" required><br>
+        <strong>New OEM:<strong><br>
+         <input type="text" name="OEMn" required><br>
+          <strong>Internal Code:<strong><br>
+           <input type="text" name="IC"  required><br>
 
-         <strong>Email:<strong><br>
-           <input type="email" name="Email" placeholder="Email" value="<?php echo $_SESSION['Email']; ?>" required><br>
-
-           <strong>Username:<strong><br>
-            <input type="text" name="Username" placeholder="Username" value="<?php echo $_SESSION['Username']; ?>"required><br>
-
-
-           <strong>Password:<strong><br>
-             <input type="password" name="password" placeholder="Password" value="<?php echo $_SESSION['password']; ?>"required><br>
-
-             <strong>Mobile Number:<strong><br>
-               <input type="tel" name="Mobile" placeholder="Mobile Number" value="<?php echo $_SESSION['Mobile']; ?>"required><br>
+           <strong>Company Provider Code:<strong><br>
+          	<input type="text" name="Pcode"   required><br>
 
 
-          <strong>Birthdate:</strong><br>
-                <input type="date" name="DateOfBirth"value="<?php echo $_SESSION['DateOfBirth']; ?>"><br>
+           <strong>Is the item corrupted?:<strong><br>Yes
+          	 <input type="radio" name="corr" ><br>No
+          	 <input type="radio" name="corr"><br>
+
+          	 <strong>Country Of Origin:<strong><br>
+          		 <input type="text" name="countroforigin" required><br>
+
+
+          <strong>Price:</strong><br>
+          			<input type="text" name="price" ><br>
           <br>
 
-              <input type="submit" name="submit" value="Submit">
-              <input type="reset" value="Cancel">
-              </div>
-                    </form>
+          		<input type="submit" name="submit" value="Submit">
+          		<input type="reset" value="Cancel">
+          		</div>
+          					</form>
 
-              </div>
-        </div>
-        </div>
+          		</div>
+          </div>
+          </div>
 <?php
     if (isset($_POST['submit'])){
-      $fname = $_POST['fname'];
-      $lname=$_POST['Lname'];
-      $dob = $_POST['DateOfBirth'];
-      $mobile=$_POST['Mobile'];
-      $email = $_POST['Email'];
-      //$usertype_id = $_POST['UserTypeID'];
-      $username=$_POST['Username'];
-      $password = $_POST['password'];
+      $id=$_POST['prouctIDList'];
+      $pic = $_POST['pic'];
+      $OEM=$_POST['OEMn'];
+      $InternalCode = $_POST['IC'];
+      $PCode=$_POST['Pcode'];
+      $corr = $_POST['corr'];
+      $CountryOfOrigin=$_POST['countroforigin'];
+      $price = $_POST['price'];
 
-      $user = new User;
-      $user->firstname = $fname;
-      $user->lastname=$lname;
-      $user->DOB = $dob;
-      $user->mobile=$mobile;
-      $user->email = $email;
-      //$user->$usertype_id = $usertype;
-      $user->username=$username;
-      $user->password = $password;
-      $user->updateMyDB();
+      $sp = new SparePart;
+      $sp->pic = $pic;
+      $sp->OEM=$OEM;
+      $sp->InternalCode = $InternalCode;
+      $sp->PCode=$PCode;
+      $sp->corr = $corr;
 
-  }
-?>
+      $sp->CountryOfOrigin=$CountryOfOrigin;
+      $sp->price = $price;
+
+
+      $result= $sp->updateMyDB($pic,$OEM,
+      $InternalCode,$PCode,$corr,$CountryOfOrigin,$price,$id);
+
+
+    }
+    ?>
 </body>
 </html>

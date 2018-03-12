@@ -3,6 +3,7 @@ session_start();
 $userid=$_SESSION['userID'];
 
 echo $userid;
+//$spid=$_SESSION['productID'];
 ?>
 <!doctype html>
 <html>
