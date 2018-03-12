@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2018 at 05:01 PM
+-- Generation Time: Mar 12, 2018 at 07:45 PM
 -- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,6 +33,15 @@ CREATE TABLE `currency` (
   `Name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `currency`
+--
+
+INSERT INTO `currency` (`ID`, `Name`) VALUES
+(1, 'Euro'),
+(2, 'Turkish Lira'),
+(3, 'Renminbi');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +59,13 @@ CREATE TABLE `order` (
   `TaxesID` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=ucs2 COLLATE=ucs2_spanish_ci;
 
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`ID`, `UserID`, `paymentMethodID`, `totalprice`, `OrderTypeID`, `DateOfOrder`, `CurrencyID`, `TaxesID`) VALUES
+(1, 3, 1, 22, 1, '2018-03-06', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -66,6 +82,13 @@ CREATE TABLE `orderdetails` (
   `OrderStatusID` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `orderdetails`
+--
+
+INSERT INTO `orderdetails` (`ID`, `SparePartID`, `OrderID`, `DateOfDelivery`, `Quantity`, `PricePerItem`, `OrderStatusID`) VALUES
+(1, 1, 1, '2018-04-10', 4, '6EGP', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +99,15 @@ CREATE TABLE `orderstatus` (
   `ID` int(255) NOT NULL,
   `StatusID` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orderstatus`
+--
+
+INSERT INTO `orderstatus` (`ID`, `StatusID`) VALUES
+(1, 1),
+(3, 2),
+(2, 3);
 
 -- --------------------------------------------------------
 
@@ -88,6 +120,14 @@ CREATE TABLE `ordertype` (
   `IsOnline` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `ordertype`
+--
+
+INSERT INTO `ordertype` (`ID`, `IsOnline`) VALUES
+(1, 1),
+(2, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -98,6 +138,16 @@ CREATE TABLE `paymentmethod` (
   `ID` int(255) NOT NULL,
   `Name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paymentmethod`
+--
+
+INSERT INTO `paymentmethod` (`ID`, `Name`) VALUES
+(1, 'cash'),
+(2, 'CreditCard'),
+(3, 'Installments'),
+(4, 'Paypal');
 
 -- --------------------------------------------------------
 
@@ -134,6 +184,15 @@ CREATE TABLE `status` (
   `Name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`ID`, `Name`) VALUES
+(1, 'Pending'),
+(2, 'Delivered'),
+(3, 'On Way');
+
 -- --------------------------------------------------------
 
 --
@@ -144,6 +203,14 @@ CREATE TABLE `taxes` (
   `ID` int(255) NOT NULL,
   `Type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `taxes`
+--
+
+INSERT INTO `taxes` (`ID`, `Type`) VALUES
+(1, 'Sales Tax'),
+(2, 'Income Tax');
 
 -- --------------------------------------------------------
 
@@ -285,37 +352,37 @@ ALTER TABLE `usertype`
 -- AUTO_INCREMENT for table `currency`
 --
 ALTER TABLE `currency`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orderstatus`
 --
 ALTER TABLE `orderstatus`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ordertype`
 --
 ALTER TABLE `ordertype`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `paymentmethod`
 --
 ALTER TABLE `paymentmethod`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sparepart`
@@ -327,7 +394,7 @@ ALTER TABLE `sparepart`
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
