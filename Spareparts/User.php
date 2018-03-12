@@ -1,7 +1,10 @@
 <?php
 require_once "ConnectionToDB.php";
+
+
 //require_once "UserType.php";
 //require_once "Page.php";
+
   class User{
   public $id;
   public $firstname;
@@ -28,8 +31,8 @@ require_once "ConnectionToDB.php";
      $row = mysqli_fetch_array($result);
      if( $num_row ==1 )
           {
-      $_SESSION['ID']=$row[0];
-      header("Location: index.html");
+            $_SESSION['userID']=$row[0];
+      header("Location: IndexLogin.php");
 
        }
        else
@@ -64,14 +67,12 @@ require_once "ConnectionToDB.php";
    function deleteUser($user){
      $db = new dbconnect;
      $sql = "DELETE FROM user
-             WHERE `ID` = $user->id
+             WHERE `user.ID` = $user->id
              ";
      $result = $db->executesql($sql);
-      if($result){
-        echo 'deleted';
-      }else{
-        echo $result->err;
-      }
+if($sql){
+  echo 'deleted';
+}
    }
 
 

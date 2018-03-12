@@ -1,3 +1,9 @@
+<?php
+session_start();
+$userid=$_SESSION['userID'];
+
+echo $userid;
+?>
 <!doctype html>
 <html>
 <head>
@@ -18,10 +24,11 @@
 	<div class="header">
 			<ul class="givusacall">
 				<li>Give us a call : +66666666 </li>
+
 			</ul>
 			<ul class="logreg">
-				<li><a href="login.php">Login </a> </li>
-				<li><a href="sign up.php"><span class="register">Register</span></a></li>
+
+
 			</ul>
 	</div>
 	<!-- Navbar Up -->
@@ -83,7 +90,7 @@
 <!-- ____________________Featured Section ______________________________-->
 <div class="allcontain">
 	<div class="feturedsection">
-		<h1 class="text-center"><span class="bdots">&bullet;</span>Featured<span class="carstxt">SpareParts</span>&bullet;</h1>
+		<h1 class="text-center"><span class="bdots">&bullet;</span>Featured<span class="carstxt">SparePart</span>&bullet;</h1>
 	</div>
 	<div class="feturedimage">
 		<div class="row firstrow">
@@ -95,13 +102,13 @@
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
 							<h1>OPEL</h1>
-							<p>"Welcome To Our Website" ,<br>
-			 					 </p>
+							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
+			 						sed do eiusmod tempor incididunt </p>
 			 				<h2>Price &euro;</h2>
 			 				<button id="btnRM" onclick="rmtxt()">READ MORE</button>
 			 				<div id="readmore">
 			 						<h1>Car Name</h1>
-			 						<p>"Welcome To Our Website ,<br>
+			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
 			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
 			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
 			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
@@ -121,8 +128,8 @@
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
 							<h1>BMW</h1>
-							<p>"Welcome To Our Website" ,<br>
-			 						</p>
+							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
+			 						sed do eiusmod tempor incididunt </p>
 			 				<h2>Price &euro;</h2>
 			 				<button id="btnRM2">READ MORE</button>
 			 				<div id="readmore2">
@@ -345,8 +352,8 @@
 		<div class="bottomlogo">
 		<span class="dotlogo">&bullet;</span><img src="image/pic1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>
 		</div>
-		<p>"Lorem ipsum dolor sit amet, consectetur,  sed do eiusmod tempor incididunt <br>
-			eiusmod tempor incididunt </p>
+		<p>"Welcome to our Website" <br>
+		 </p>
 		 <img src="image/line.png" alt="line"> <br>
 			<div class="footer">
 				<div class="copyright">
