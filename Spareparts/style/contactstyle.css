@@ -30,6 +30,14 @@
     width: 26%;
     margin-left: 13%;
 }
+.file-form{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+    width: 26%;
+    margin-left: 13%;
+}
 .name-form{
 width: 100%;
 background: none;
@@ -69,23 +77,25 @@ box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0) inset;
 .message-form{
 width: 100%;
 margin-bottom: 20px;
- 
+
 }
 .btn-submit{
 	margin-left: 75%;
 }
+
 
  .google-maps{
     padding-left: 50%;
     padding-top: 7%;
     margin-bottom: 10%;
     max-width: 1349px;
- 
+
  }
  #googleMap{
     max-width: 90%;
- 
+
  }
+
  @media screen and (min-width: 980px) and (max-width: 1279px){
 .group-coustume{
     top:90px;
@@ -94,10 +104,10 @@ margin-bottom: 20px;
  @media screen and (min-width: 768px) and (max-width: 979px){
 .group-coustume{
     top:80px;
-} 
+}
 .group-coustume>input{
     margin-bottom: 10px;
-} 
+}
  .group-coustume>textarea{
         height: 50px;
     }
@@ -120,15 +130,15 @@ margin-bottom: 20px;
       .google-maps{
     padding-left: 0px;
     height:60%;
- } 
+ }
   #googleMap{
     max-width: 90%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top:90%;
- 
- } 
+
+ }
  .contact-form{
     width: 100%;
     margin: 0px;

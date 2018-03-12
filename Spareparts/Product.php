@@ -36,10 +36,10 @@ if($sql){
    $conn = $db->connect();
    $sql="INSERT INTO sparepart
    (`Picture`,`OEM`,`InternalCode`,`CompanyProviderCode`,
-     `IsCorrupted`/*,`UserTypeID`*/,`CountryOfOrigin`,`Price`)
+     `IsCorrupted`,`CountryOfOrigin`,`Price`)
      VALUES ('$pic',
        '$OEM','$InternalCode','$PCode',
-       '$corr',/*'$usertype_id',*/
+       '$corr',
        '$CountryOfOrigin','$price')";
    $res = mysqli_query($conn,$sql);
    header("Location: index.html");

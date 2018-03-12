@@ -1,3 +1,8 @@
+<?php
+  require("ConnectionToDB.php");
+  require("Product.php");
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -52,29 +57,29 @@
 	 <div id="content2">
 		 <form method="POST">
 <div id="form1">
-<strong>Picture:<strong><br>
-<input type="image" name="pic" placeholder="upload picture" required><br>
-
+	<strong>Picture:<strong><br>
+		<input type="file" name="pic" accept="image/*"id="img">
+<br>
 <strong>OEM:<strong><br>
 <input type="text" name="OEM" placeholder="OEM" required><br>
 
 <strong>Internal Code:<strong><br>
- <input type="email" name="IC" placeholder="Internal Code" required><br>
+ <input type="text" name="IC" placeholder="Internal Code" required><br>
 
  <strong>Company Provider Code:<strong><br>
 	<input type="text" name="Pcode" placeholder="Exporter Code" required><br>
 
 
  <strong>Is the item corrupted?:<strong><br>Yes
-	 <input type="radio" name="yes" required><br>NO
-	 <input type="radio" name="No" required><br>
+	 <input type="radio" name="corr" ><br>No
+	 <input type="radio" name="corr"><br>
 
-	 <strong>Mobile Number:<strong><br>
-		 <input type="tel" name="Mobile" placeholder="Mobile Number" required><br>
+	 <strong>Country Of Origin:<strong><br>
+		 <input type="text" name="countroforigin" placeholder="Country Of Origin" required><br>
 
 
-<strong>Birthdate:</strong><br>
-			<input type="date" name="DateOfBirth"><br>
+<strong>Price:</strong><br>
+			<input type="text" name="price" placeholder="Enter Price in EGP"><br>
 <br>
 
 		<input type="submit" name="submit" value="Submit">
@@ -86,29 +91,29 @@
 </div>
 </div>
 <?php
+
 	if (isset($_POST['submit'])){
-			$fname = $_POST['fname'];
-			$lname=$_POST['Lname'];
-			$dob = $_POST['DateOfBirth'];
-			$mobile=$_POST['Mobile'];
-			$email = $_POST['Email'];
-			//$usertype_id = $_POST['UserTypeID'];
-			$username=$_POST['Username'];
-			$password = $_POST['password'];
+			$pic = $_POST['pic'];
+			$OEM=$_POST['OEM'];
+			$InternalCode = $_POST['IC'];
+			$PCode=$_POST['Pcode'];
+			$corr = $_POST['corr'];
+			$CountryOfOrigin=$_POST['countroforigin'];
+			$price = $_POST['price'];
 
-			$user = new User;
-			$user->firstname = $fname;
-			$user->lastname=$lname;
-			$user->DOB = $dob;
-			$user->mobile=$mobile;
-			$user->email = $email;
-			//$user->$usertype_id = $usertype;
-			$user->username=$username;
-			$user->password = $password;
+			$sp = new SparePart;
+			$sp->pic = $pic;
+			$sp->OEM=$OEM;
+			$sp->InternalCode = $InternalCode;
+			$sp->PCode=$PCode;
+			$sp->corr = $corr;
+
+			$sp->CountryOfOrigin=$CountryOfOrigin;
+			$sp->price = $price;
 
 
-			$user->insertInDb($fname,$lname,$dob,$mobile,$email,
-		/*$usertype,*/$username,$password);
+			$sp->insertInDb($pic,$OEM,$InternalCode,
+			$PCode,$corr,$CountryOfOrigin,$price);
 
 	}
 ?>
