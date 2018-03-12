@@ -75,6 +75,22 @@
 		</nav>
 	</div>
 </div>
+
+<p>
+	<?php
+		include "ConnectionToDB.php";
+		$db = new dbconnect;
+		$sql = "SELECT * FROM `pages`
+						WHERE `Name` = 'Contact Us'
+						";
+		$result= $db->executesql($sql);
+		if($row=mysqli_fetch_array($result)){
+			$html = $row["HTML"];
+			$id=$row["ID"];
+		}
+		echo $html;
+		?>
+</p>
 <div class="allcontain">
 	<div class="contact">
 		<div class="newslettercontent">
