@@ -64,12 +64,14 @@ require_once "ConnectionToDB.php";
    function deleteUser($user){
      $db = new dbconnect;
      $sql = "DELETE FROM user
-             WHERE `user.ID` = $user->id
+             WHERE `ID` = $user->id
              ";
      $result = $db->executesql($sql);
-if($sql){
-  echo 'deleted';
-}
+      if($result){
+        echo 'deleted';
+      }else{
+        echo $result->err;
+      }
    }
 
 

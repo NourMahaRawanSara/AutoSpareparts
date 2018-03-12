@@ -23,7 +23,7 @@ User ID <input type="text" name="userid" placeholder="Enter User ID" required>
 if (isset($_POST['submit'])){
     $userid = $_POST['userid'];
     $user = new User;
-$user->id = $userid;
-$user->deleteUser($user);
+    $user->id = $userid;
+    $user->deleteUser($user);
   }
 ?>
