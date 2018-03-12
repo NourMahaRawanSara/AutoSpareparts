@@ -19,17 +19,17 @@ require_once "ConnectionToDB.php";
 
 
 
-  /* function deleteUser($user){
+   function deleteProd($sp){
      $db = new dbconnect;
-     $sql = "DELETE FROM user
-             WHERE `user.ID` = $user->id
+     $sql = "DELETE FROM sparepart
+             WHERE `ID` = $sp->id
              ";
      $result = $db->executesql($sql);
 if($sql){
   echo 'deleted';
 }
    }
-*/
+
 
  function insertInDb($pic,$OEM,$InternalCode,$PCode,$corr,$CountryOfOrigin,$price){
    $db = new dbconnect;
