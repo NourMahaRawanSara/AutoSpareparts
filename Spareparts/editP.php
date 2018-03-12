@@ -11,27 +11,27 @@
         <form method="post" action="">
 
           <strong>First Name:<strong><br>
-         <input type="text" name="fname" placeholder="Firstname" required><br>
+         <input type="text" name="fname"  value="<?php echo $_SESSION['Fname']; ?>" required><br>
 
         <strong>Last Name:<strong><br>
-         <input type="text" name="Lname" placeholder="Lastname" required><br>
+         <input type="text" name="Lname" placeholder="Lastname"value="<?php echo $_SESSION['Lname']; ?>" required><br>
 
          <strong>Email:<strong><br>
-           <input type="email" name="Email" placeholder="Email" required><br>
+           <input type="email" name="Email" placeholder="Email" value="<?php echo $_SESSION['Email']; ?>" required><br>
 
            <strong>Username:<strong><br>
-            <input type="text" name="Username" placeholder="Username" required><br>
+            <input type="text" name="Username" placeholder="Username" value="<?php echo $_SESSION['Username']; ?>"required><br>
 
 
            <strong>Password:<strong><br>
-             <input type="password" name="password" placeholder="Password" required><br>
+             <input type="password" name="password" placeholder="Password" value="<?php echo $_SESSION['password']; ?>"required><br>
 
              <strong>Mobile Number:<strong><br>
-               <input type="tel" name="Mobile" placeholder="Mobile Number" required><br>
+               <input type="tel" name="Mobile" placeholder="Mobile Number" value="<?php echo $_SESSION['Mobile']; ?>"required><br>
 
 
           <strong>Birthdate:</strong><br>
-                <input type="date" name="DateOfBirth"><br>
+                <input type="date" name="DateOfBirth"value="<?php echo $_SESSION['DateOfBirth']; ?>"><br>
           <br>
 
               <input type="submit" name="submit" value="Submit">
@@ -62,8 +62,7 @@
       //$user->$usertype_id = $usertype;
       $user->username=$username;
       $user->password = $password;
-      $user->insertInDb($fname,$lname,$dob,$mobile,$email,
-    /*$usertype,*/$username,$password);
+      $user->updateMyDB();
 
   }
 ?>

@@ -91,7 +91,7 @@ if($sql){
  }
    }
 
-  /* function updateMyDB(){
+   public function updateMyDB($firstname,$lastname,$DOB,$mobile,$email,$username,$password){
      $this->$db->connect();
      $sql = "UPDATE `user`
              SET `Email` = '$email'
@@ -101,7 +101,7 @@ if($sql){
      return $result;
    }
 
-   function selectAllUsersInDb(){
+  /* function selectAllUsersInDb(){
      $db = new dbconnect;
      $sql = "SELECT * FROM `user` ";
      $result = $db->executesql($sql);
