@@ -69,6 +69,10 @@ echo $userid;
 				<li>
 <a href="search.php"> Search User </a>
 </li>
+<li>
+<a href="edithtml.php"> Edit Html </a>
+</li>
+
 			</ul>
 
 		</div>

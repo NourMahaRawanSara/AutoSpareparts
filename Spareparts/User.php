@@ -13,7 +13,7 @@ require_once "ConnectionToDB.php";
   public $mobile;
   public $email;
   public $username;
-  public /*sha1()*/$password;
+  public $password;
 //  public $usertype_id;
 
    function __construct(){
@@ -40,6 +40,7 @@ require_once "ConnectionToDB.php";
       echo 'Incorrect Username or Password';
        }
       }
+
 
 
      /*//$_SESSION["ID"] = $row['ID'];
