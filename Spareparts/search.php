@@ -1,23 +1,11 @@
-<?php
-	session_start();
-	require("ConnectionToDB.php");
-	require("User.php");
-?>
-
 <!DOCTYPE html>
-
-
+   <?php
+	  session_start();
+	  require("ConnectionToDB.php");
+   ?>
 <html>
 <head>
-	<style>
-	table, th, td {
-	    border: 1px solid black;
-			padding: 15px;
-
-	}
-
-	</style>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
 	<title>Delta Auto Spare Parts </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
 	<meta name="author" content="Web Domus Italia">
@@ -84,26 +72,43 @@
 	</nav>
 </div>
 <div style=" text-align: center; padding-top:30px;">
+    <body>
+		<input id="searchField" type="text" placeholder="Search..">
+		<div id="searchResult"></div>
 
-<?php
-$user = new User;
+		<script>
+		var searchField = document.getElementById("searchField");
+			searchField.oninput = function(){
+				showResult(searchField.value);
+			}
 
-$user->selectAllUsersInDb();
- 	?>
+		function showResult(searchConstraint){
 
+			if(searchConstraint.length == 0){
+				document.getElementById("searchResult").innerHTML = "";
+				return;
+			}
 
-</div>
-<div style=" text-align: center; padding-top:50px;">
-<a href="sign up.php"> <button type="button" value="add">Add</button> </a>
-<a href="editE.php"><button type="button" value="edit">update</button> </a>
-<a href="deleteE.php"><button type="button" value="delete ">delete!</button> </a>
-</div>
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}
 
+			xmlhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					document.getElementById("searchResult").innerHTML = this.responseText;
+				}
+			}
 
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
-<script type="text/javascript" src="source/js/isotope.js"></script>
-<script type="text/javascript" src="source/js/myscript.js"></script>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
-</body>
+			xmlhttp.open("GET" , "liveSearch.php?q=" + searchConstraint ,true);
+			xmlhttp.send();
+		}
+
+		</script>
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+    <script type="text/javascript" src="source/js/isotope.js"></script>
+    <script type="text/javascript" src="source/js/myscript.js"></script>
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+
+    </body>
 </html>

@@ -63,9 +63,12 @@ echo $userid;
 
 
 				<li>
-					<a href="contact.html">CONTACT</a>
+					<a href="contact.php">CONTACT</a>
 
 				</li>
+				<li>
+<a href="search.php"> Search User </a>
+</li>
 			</ul>
 
 		</div>
