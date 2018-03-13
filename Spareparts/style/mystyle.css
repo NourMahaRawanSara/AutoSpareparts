@@ -9,6 +9,9 @@
  */
 
 
+	table, th, td {
+    border: 1px solid black;
+}
 .allcontain{
 	max-width: 1366px;
 	margin-left: auto;

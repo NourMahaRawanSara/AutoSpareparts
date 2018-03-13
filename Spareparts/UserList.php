@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require("ConnectionToDB.php");
-	require("Product.php");
+	require("User.php");
 ?>
 
 <!DOCTYPE html>
@@ -86,17 +86,17 @@
 <div style=" text-align: center; padding-top:30px;">
 }
 <?php
-$sp = new SparePart;
+$user = new User;
 
-$sp->selectAllProdInDb();
+$user->selectAllUsersInDb();
  	?>
 
 
 </div>
 <div style=" text-align: center; padding-top:50px;">
-<a href="add/p.php"> <button type="button" value="add">Add</button> </a>
-<a href="editP.php"><button type="button" value="edit">update</button> </a>
-<a href="deleteP.php"><button type="button" value="delete ">delete!</button> </a>
+<a href="sign up.php"> <button type="button" value="add">Add</button> </a>
+<a href="editE.php"><button type="button" value="edit">update</button> </a>
+<a href="deleteE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
 
 

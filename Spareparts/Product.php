@@ -60,25 +60,44 @@ public function updateMyDB($pic,$OEM,$InternalCode,$PCode,$corr,$CountryOfOrigin
     $result =$db->executesql($sql);
     return $result;
    }
-}
-   /*function selectAllUsersInDb(){
-     $db = new dbconnect;
-     $sql = "SELECT * FROM `user` ";
-     $result = $db->executesql($sql);
 
-     if ($row = mysqli_fetch_array($result)){
-       $this->firstname = $row['Fname'];
-       $this->lastname = $row['Lname'];
-       $this->firstname = $row['Fname'];
-       $this->DOB = $row['DateOfBirth'];
-       $this->mobile = $row['Mobile'];
-       $this->email = $row['Email'];
-       $this->username = $row['Username'];
-       $this->password = $row['Password'];
-       $this->usertype_id= $row['UserTypeID'];
+  public function selectAllProdInDb(){
+     $db = new dbconnect;
+     $sql = "SELECT * FROM `sparepart` where 1";
+     $result =$db->executesql($sql);
+     if ($result->num_rows > 0) {
+    echo " <table >
+    <tr>
+    <th>ID </th>
+    <th>Picture</th>
+    <th>OEM</th>
+    <th>Internal Code</th>
+    <th>Company Provider Code</th>
+    <th>Corrupted </th>
+    <th>Country Of Origin</th>
+    <th>Price</th>
+    </tr>
+    ";
+
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>" ." " .$row["ID"]." ".
+        "</td><td>" . $row["Picture"]." ".
+         "</td><td>" . $row["OEM"]." ".
+        "</td><td>" . $row["InternalCode"]." ".
+        "</td><td>" . $row["CompanyProviderCode"].
+        "</td><td>" . $row["IsCorrupted"].
+        "</td><td>" . $row["CountryOfOrigin"].
+          "</td><td>" . $row["Price"].
+
+        "</td></tr>";
+    }
+    echo "</table>";
+}
+else {
+    echo "0 results";
      }
    }
 
- }*/
+}
 
 ?>

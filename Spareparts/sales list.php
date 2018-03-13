@@ -3,10 +3,17 @@
 	require("ConnectionToDB.php");
 	require("User.php");
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
+
 
 <html>
 <head>
+	<style>
+	table, th, td {
+	    border: 1px solid black;
+	}
+	</style>
 	<meta charset="UTF-8">
 	<title>Delta Auto Spare Parts </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
@@ -17,6 +24,11 @@
 	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="style/slider.css">
 	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+	<!-- Custom CSS -->
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
 </head>
 <body>
 
@@ -41,7 +53,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
+
 			</div>
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">

@@ -98,26 +98,41 @@ if($sql){
      $result =$db->executesql($sql);
      return $result;
    }
-}
-   function selectAllUsersInDb(){
+
+  public function selectAllUsersInDb(){
      $db = new dbconnect;
-     $sql = "SELECT * FROM `user` ";
-     $result = $db->executesql($sql);
+     $sql = "SELECT * FROM `user` where 1";
+     $result =$db->executesql($sql);
+     if ($result->num_rows > 0) {
+    echo " <table >
+    <tr>
+    <th>ID </th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Date Of Birth</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Username</th>
+    </tr>
+    ";
 
-     if ($row = mysqli_fetch_array($result)){
-       $this->firstname = $row['Fname'];
-       $this->lastname = $row['Lname'];
-       $this->firstname = $row['Fname'];
-       $this->DOB = $row['DateOfBirth'];
-       $this->mobile = $row['Mobile'];
-       $this->email = $row['Email'];
-       $this->username = $row['Username'];
-       $this->password = $row['Password'];
-       //$this->usertype_id= $row['UserTypeID'];
-     }
-   }
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["ID"]." ".
+        "</td><td>" . $row["Fname"]." ".
+         "</td><td>" . $row["Lname"]." ".
+        "</td><td>" . $row["DateOfBirth"]." ".
+        "</td><td>" . $row["Mobile"].
+        "</td><td>" . $row["Email"].
+        "</td><td>" . $row["Username"].
 
+        "</td></tr>";
+    }
+    echo "</table>";
+}
+else {
+    echo "0 results";
+}
 
-
-
+}
+}
 ?>
