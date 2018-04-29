@@ -58,33 +58,9 @@ require_once("Model/SparepartModel.php");
 	 <div id="content2">
 		 <form method="POST">
 <div id="form1">
-	<strong>Picture:<strong><br>
-		<center><input type="file" name="pic" accept="image/*"id="img"></center>
-<br>
-<strong>OEM:<strong><br>
-<input type="text" name="OEM" placeholder="OEM" required><br>
-
-<strong>Internal Code:<strong><br>
- <input type="text" name="IC" placeholder="Internal Code" required><br>
-
- <strong>Company Provider Code:<strong><br>
-	<input type="text" name="Pcode" placeholder="Exporter Code" required><br>
-
-
- <strong>Is the item corrupted?:<strong><br>Yes
-	 <input type="radio" name="corr" ><br>No
-	 <input type="radio" name="corr"><br>
-
-	 <strong>Country Of Origin:<strong><br>
-		 <input type="text" name="countroforigin" placeholder="Country Of Origin" required><br>
-
-
-<strong>Price:</strong><br>
-			<input type="text" name="price" placeholder="Enter Price in EGP"><br>
-<br>
-
-		<input type="submit" name="submit" value="Submit">
-		<input type="reset" value="Cancel">
+	<strong>
+        Number of current available Spare parts:
+    </strong>
 		</div>
 					</form>
 
@@ -93,28 +69,17 @@ require_once("Model/SparepartModel.php");
 </div>
 <?php
 
-	if (isset($_POST['submit'])){
-			$pic = $_POST['pic'];
-			$OEM=$_POST['OEM'];
-			$InternalCode = $_POST['IC'];
-			$PCode=$_POST['Pcode'];
-			$corr = $_POST['corr'];
-			$CountryOfOrigin=$_POST['countroforigin'];
-			$price = $_POST['price'];
+
 
 			$sp = new SparepartModel();
-			$sp->Picture = $pic;
-			$sp->OEM=$OEM;
-			$sp->InternalCode = $InternalCode;
-			$sp->CompanyProviderCode=$PCode;
-			$sp->IsCorrupted = $corr;
-			$sp->CountryOfOrigin=$CountryOfOrigin;
-			$sp->Price = $price;
 
 
-			$sp->AddSP();
+			$result= $sp->CounterSP();
+			while ($row = mysqli_fetch_array($result)){
+			    echo "<strong><center>".$row['COUNT(*)']."</center></strong>";
+            }
 
-	}
+
 ?>
 </body>
 </html>

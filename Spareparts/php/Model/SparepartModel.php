@@ -49,6 +49,14 @@ VALUES (NULL, '$this->Picture', '$this->OEM', '$this->InternalCode', '$this->Com
           return $i;
       }
 
+      public function CounterSP(){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+
+          $sql = "SELECT COUNT(*) FROM sparepart";
+          $result = $mysqli->query($sql);
+          return $result;
+      }
       public function Delete(){
 
       }
