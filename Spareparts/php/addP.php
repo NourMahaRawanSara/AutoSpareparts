@@ -1,6 +1,7 @@
 <?php
-  require("ConnectionToDB.php");
-  require("Product.php");
+require_once "ConnectionToDB.php";
+  //require("Product.php");
+require_once("Model/SparepartModel.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,11 +12,11 @@
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="style/slider.css">
-	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="style/login.css">
+	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -35,12 +36,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
+				<a class="navbar-brand logo" href="#"><img src="../image/logo1.png" alt="logo"></a>
 			</div>
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="index.html">HOME</a> </li>
+				<li class="active"><a href="../index.html">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
@@ -101,19 +102,17 @@
 			$CountryOfOrigin=$_POST['countroforigin'];
 			$price = $_POST['price'];
 
-			$sp = new SparePart;
-			$sp->pic = $pic;
+			$sp = new SparepartModel();
+			$sp->Picture = $pic;
 			$sp->OEM=$OEM;
 			$sp->InternalCode = $InternalCode;
-			$sp->PCode=$PCode;
-			$sp->corr = $corr;
-
+			$sp->CompanyProviderCode=$PCode;
+			$sp->IsCorrupted = $corr;
 			$sp->CountryOfOrigin=$CountryOfOrigin;
-			$sp->price = $price;
+			$sp->Price = $price;
 
 
-			$sp->insertInDb($pic,$OEM,$InternalCode,
-			$PCode,$corr,$CountryOfOrigin,$price);
+			$sp->AddSP();
 
 	}
 ?>

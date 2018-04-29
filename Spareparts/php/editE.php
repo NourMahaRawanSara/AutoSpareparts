@@ -1,26 +1,9 @@
 <?php
   session_start();
 require_once "ConnectionToDB.php";
-  require("User.php");
-  $db = new dbconnect;
-  $conn = $db->connect();
-  $userid=$_SESSION['userID'];
-  $sql="select * from `user` WHERE `ID`='$userid'";
-  $result =$db->executesql($sql);
-
-  		if($row=mysqli_fetch_array($result)){
-  			$fname = $row["Fname"];
-        $lname = $row["Lname"];
-        $mobile = $row["Mobile"];
-        $DOB = $row["DateOfBirth"];
-        $username = $row["Username"];
-        $password = $row["password"];
-        $email = $row["Email"];
+require_once("Model/UserModel.php");
 
 
-
-
-  		}
 
 ?>
 <!DOCTYPE html>
@@ -32,11 +15,11 @@ require_once "ConnectionToDB.php";
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="style/slider.css">
-	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="style/login.css">
+	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -120,22 +103,18 @@ require_once "ConnectionToDB.php";
       $dob = $_POST['DateOfBirth'];
       $mobile=$_POST['Mobile'];
       $email = $_POST['Email'];
-      //$usertype_id = $_POST['UserTypeID'];
       $username=$_POST['Username'];
       $password = $_POST['password'];
 
-      $user = new User;
+      $user = new UserModel;
       $user->firstname = $fname;
       $user->lastname=$lname;
       $user->DOB = $dob;
       $user->mobile=$mobile;
       $user->email = $email;
-      //$user->$usertype_id = $usertype;
       $user->username=$username;
       $user->password = $password;
-    $result= $user->updateMyDB($fname,$lname,
-    $dob,$mobile,$email,/*$usertype,*/$username,$password,$id);
-
+    $user->Edit();
 
   }
 ?>

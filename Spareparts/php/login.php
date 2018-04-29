@@ -1,8 +1,8 @@
 <?php
-session_start();
+//session_start();
 $_SESSION['auth'] = "true";
   require("ConnectionToDB.php");
-  require("User.php");
+  require_once("Model/UserModel.php");
 	
 
 ?>
@@ -15,11 +15,11 @@ $_SESSION['auth'] = "true";
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="style/slider.css">
-	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="style/login.css">
+	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -44,14 +44,14 @@ $_SESSION['auth'] = "true";
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="index.html">HOME</a> </li>
+				<li class="active"><a href="../index.html">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="Vw and Skoda List.html">VOLkSWAGEN</a></li>
-						<li><a href="BMW.html">BMW</a></li>
-						<li><a href="Vw and Skoda List.html">SKODA</a></li>
-						<li><a href="Opel List.html">OPEL</a></li>
+						<li><a href="../Vw and Skoda List.html">VOLkSWAGEN</a></li>
+						<li><a href="../BMW.html">BMW</a></li>
+						<li><a href="../Vw and Skoda List.html">SKODA</a></li>
+						<li><a href="../Opel List.html">OPEL</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -78,13 +78,15 @@ $_SESSION['auth'] = "true";
 </div>
 
 <?php
+    session_start();
     if (isset($_POST['submit'])){
       $username = $_POST['username'];
       $password = $_POST['password'];
 
-      $user = new User;
+        $user = new UserModel;
 
-      $user->login($username, $password);
+        $user->login($username,$password);
+
 
     }
 

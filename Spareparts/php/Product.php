@@ -1,5 +1,5 @@
 <?php
-require_once "ConnectionToDB.php";
+require_once "dbconnect.php";
 //require_once "UserType.php";
 //require_once "Page.php";
   class SparePart{
@@ -80,9 +80,10 @@ public function updateMyDB($pic,$OEM,$InternalCode,$PCode,$corr,$CountryOfOrigin
     ";
 
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" ." " .$row["ID"]." ".
-        "</td><td>" . $row["Picture"]." ".
-         "</td><td>" . $row["OEM"]." ".
+        echo "<tr>
+           <td>" ." " .$row["ID"]." ". "</td>
+           <td>" . $row["Picture"]." ". "</td>
+           <td>" . $row["OEM"]." ".
         "</td><td>" . $row["InternalCode"]." ".
         "</td><td>" . $row["CompanyProviderCode"].
         "</td><td>" . $row["IsCorrupted"].

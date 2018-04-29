@@ -1,21 +1,21 @@
 <?php
-  require("ConnectionToDB.php");
-  require("User.php");
+
+  require_once("Model/UserModel.php");
+  require_once "ConnectionToDB.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
 	<title>Delta Auto Spare Parts </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="style/slider.css">
-	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="style/login.css">
+	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -55,13 +55,14 @@
 	</nav>
 	<div id="content">
 	 <div id="content2">
+     <div id="form1">
              <form method="POST">
-			<div id="form1">
+
         <strong>First Name:<strong><br>
-       <input type="text" name="fname" placeholder="Firstname" required><br>
+       <input type="text" name="fname" placeholder="First Name" required><br>
 
       <strong>Last Name:<strong><br>
-       <input type="text" name="Lname" placeholder="Lastname" required><br>
+       <input type="text" name="Lname" placeholder="Last Name" required><br>
 
        <strong>Email:<strong><br>
          <input type="email" name="Email" placeholder="Email" required><br>
@@ -96,23 +97,23 @@
               $dob = $_POST['DateOfBirth'];
               $mobile=$_POST['Mobile'];
               $email = $_POST['Email'];
-              //$usertype_id = $_POST['UserTypeID'];
               $username=$_POST['Username'];
               $password = $_POST['password'];
 
-              $user = new User;
-              $user->firstname = $fname;
-              $user->lastname=$lname;
+              $user = new UserModel();
+              $user->FName = $fname;
+              $user->LName=$lname;
               $user->DOB = $dob;
-              $user->mobile=$mobile;
-              $user->email = $email;
-              //$user->$usertype_id = $usertype;
-              $user->username=$username;
-              $user->password = $password;
+              $user->Mobile=$mobile;
+              $user->Email = $email;
+              $user->Username=$username;
+              $user->Password = md5($password);
 
 
-              $user->insertInDb($fname,$lname,$dob,$mobile,$email,
-            /*$usertype,*/$username,$password);
+              $user->AddClient();
+
+//              $user->insertInDb($fname,$lname,$dob,$mobile,$email,
+//            /*$usertype,*/$username,$password);
 
           }
         ?>
