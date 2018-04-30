@@ -1,23 +1,23 @@
 <?php
 
 
-  class SparepartModel{
+  class BillModel{
 
       public $ID;
-      public $Picture;
-      public $OEM;
-      public $InternalCode;
-      public $CompanyProviderCode;
-      public $IsCorrupted;
-      public $CountryOfOrigin;
-      public $Price;
+      public $OrderDetailsID;
+      public $SparePartID;
+      public $UserID;
+      public $TotalAmount;
+      public $CommissionID;
+      public $Notes;
+
 
 
       public function __construct(){
 
       }
 
-      public function AddSP(){
+      /*public function AddSP(){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
@@ -29,31 +29,30 @@ VALUES (NULL, '$this->Picture', '$this->OEM', '$this->InternalCode', '$this->Com
 
       public function Edit(){
 
-      }
+      }*/
 
       public function View(){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
 
-  $db = ConnectionToDB::getInstance();
-  $mysqli = $db->getConnection();
-
-  $sql = "SELECT * FROM `sparepart`
+          $sql = "SELECT * FROM `bill`
                 ";
-  $result = $mysqli->query($sql);
-  $i=-1;
+          $result = $mysqli->query($sql);
+          $i=-1;
 
-  while($row =mysqli_fetch_array($result)){
-  $i++;
-  $this->ID[$i]=$row['ID'];
-  $this->Picture[$i]=$row['Picture'];
-  $this->OEM[$i]=$row['OEM'];
-  $this->InternalCode[$i]=$row['InternalCode'];
-  $this->CompanyProviderCode[$i]=$row['CompanyProviderCode'];
-  $this->IsCorrupted[$i]=$row['IsCorrupted'];
-  $this->CountryOfOrigin[$i]=$row['CountryOfOrigin'];
-  $this->Price[$i]=$row['Price'];
-  }
-return $i;
-}
+          while($row =mysqli_fetch_array($result)){
+              $i++;
+              $this->ID[$i]=$row['ID'];
+              $this->OrderDetailsID[$i]=$row['OrderDetailsID'];
+              $this->SparePartID[$i]=$row['SparePartID'];
+              $this->UserID[$i]=$row['UserID'];
+              $this->TotalAmount[$i]=$row['TotalAmount'];
+              $this->CommissionID[$i]=$row['CommissionID'];
+              $this->Notes[$i]=$row['Notes'];
+          }
+          return $i;
+      }
+
       public function CounterSP(){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
