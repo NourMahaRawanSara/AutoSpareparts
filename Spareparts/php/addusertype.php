@@ -1,3 +1,6 @@
+<?php
+require_once "ConnectionToDB.php";
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,23 +8,26 @@
     <title></title>
   </head>
   <body>
-    <form>
-      User Type Name<input type="text" name="userid" />
-      <br /><br /><br /><br />
-      <input type="submit" name="submit" value="New User Type" />
+    <form method="POST">
+
+
+        <strong><center>UserType Position:<br></center></strong>
+        <center><input type="text" name="position"></center>
+
+        <center><input type="submit" name="submit" value="New User Type" /></center>
     </form>
   </body>
 </html>
 
 <?php
-  include("UserType.php");
+require_once("Model/UserTypeModel.php");
+
   if (isset($_POST['submit'])){
-      $userid = $_POST['userid'];
+      $position = $_POST['position'];
 
-      $user = new UserType;
-      $user->Position = $userid;
-
-      $user->addNewUserType($user);
+      $user = new UserTypeModel();
+      $user->Position = $position;
+      $user->Add();
     }
 
 ?>

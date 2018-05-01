@@ -96,10 +96,18 @@ WHERE `id` = '$this->ID' ";
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
-          $sql = "SELECT * FROM `user`
-                  
-                ";
-          $result = $mysqli->query($sql);
+          $sql = " SELECT user.ID, 
+                    user.Fname, 
+                    user.Lname, 
+                    user.Mobile, 
+                    user.DateOfBirth, 
+                    user.Email, 
+                    user.Username, 
+                    usertype.Position
+          FROM `user`
+          INNER JOIN `usertype` ON `user`.`usertypeID` = `usertype`.`ID`
+          ";
+         $result = $mysqli->query($sql);
           $i=-1;
 
           while($row =mysqli_fetch_array($result)){
@@ -110,14 +118,14 @@ WHERE `id` = '$this->ID' ";
               $this->Mobile[$i]=$row['Mobile'];
               $this->DOB[$i]=$row['DateOfBirth'];
               $this->Email[$i]=$row['Email'];
-              $this->UserTypeID[$i]=$row['UserTypeID'];
+              $this->UserTypeID[$i]=$row['Position'];
               $this->Username[$i]=$row['Username'];
-              $this->Password[$i]=$row['password'];
+              //$this->Password[$i]=$row['password'];
 
           }
           return $i;
       }
-      public function View(){
+      public function ViewSales(){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
@@ -142,7 +150,106 @@ WHERE `id` = '$this->ID' ";
           }
           return $i;
       }
+      public function ViewInventory(){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
 
+          $sql = "SELECT * FROM `user`
+                  WHERE `UserTypeID` = 4
+                ";
+          $result = $mysqli->query($sql);
+          $i=-1;
+
+          while($row =mysqli_fetch_array($result)){
+              $i++;
+              $this->ID[$i]=$row['ID'];
+              $this->FName[$i]=$row['Fname'];
+              $this->LName[$i]=$row['Lname'];
+              $this->Mobile[$i]=$row['Mobile'];
+              $this->DOB[$i]=$row['DateOfBirth'];
+              $this->Email[$i]=$row['Email'];
+              $this->UserTypeID[$i]=$row['UserTypeID'];
+              $this->Username[$i]=$row['Username'];
+              $this->Password[$i]=$row['password'];
+
+          }
+          return $i;
+      }
+      public function ViewDelivery(){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+
+          $sql = "SELECT * FROM `user`
+                  WHERE `UserTypeID` = 6
+                ";
+          $result = $mysqli->query($sql);
+          $i=-1;
+
+          while($row =mysqli_fetch_array($result)){
+              $i++;
+              $this->ID[$i]=$row['ID'];
+              $this->FName[$i]=$row['Fname'];
+              $this->LName[$i]=$row['Lname'];
+              $this->Mobile[$i]=$row['Mobile'];
+              $this->DOB[$i]=$row['DateOfBirth'];
+              $this->Email[$i]=$row['Email'];
+              $this->UserTypeID[$i]=$row['UserTypeID'];
+              $this->Username[$i]=$row['Username'];
+              $this->Password[$i]=$row['password'];
+
+          }
+          return $i;
+      }
+      public function ViewAdmin(){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+
+          $sql = "SELECT * FROM `user`
+                  WHERE `UserTypeID` = 1
+                ";
+          $result = $mysqli->query($sql);
+          $i=-1;
+
+          while($row =mysqli_fetch_array($result)){
+              $i++;
+              $this->ID[$i]=$row['ID'];
+              $this->FName[$i]=$row['Fname'];
+              $this->LName[$i]=$row['Lname'];
+              $this->Mobile[$i]=$row['Mobile'];
+              $this->DOB[$i]=$row['DateOfBirth'];
+              $this->Email[$i]=$row['Email'];
+              $this->UserTypeID[$i]=$row['UserTypeID'];
+              $this->Username[$i]=$row['Username'];
+              $this->Password[$i]=$row['password'];
+
+          }
+          return $i;
+      }
+      public function ViewAccountant(){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+
+          $sql = "SELECT * FROM `user`
+                  WHERE `UserTypeID` = 5
+                ";
+          $result = $mysqli->query($sql);
+          $i=-1;
+
+          while($row =mysqli_fetch_array($result)){
+              $i++;
+              $this->ID[$i]=$row['ID'];
+              $this->FName[$i]=$row['Fname'];
+              $this->LName[$i]=$row['Lname'];
+              $this->Mobile[$i]=$row['Mobile'];
+              $this->DOB[$i]=$row['DateOfBirth'];
+              $this->Email[$i]=$row['Email'];
+              $this->UserTypeID[$i]=$row['UserTypeID'];
+              $this->Username[$i]=$row['Username'];
+              $this->Password[$i]=$row['password'];
+
+          }
+          return $i;
+      }
 
       public function Delete(){
           $db = ConnectionToDB::getInstance();

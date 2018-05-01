@@ -63,35 +63,23 @@ echo $userid;
 
 
 				<li>
-					<a href="contact.html">CONTACT</a>
-
-				</li>
-        <li>
-					<a href="Skoda List.html">skoda list</a>
-
-				</li>
-        <li>
-					<a href="spareparts.html">spare parts</a>
+					<a href="contact.php">Contact Us</a>
 
 				</li>
 
+
+
         <li>
-					<a href="product list.php">product list</a>
+					<a href="product list.php">Sparepart list</a>
 
 				</li>
 
-        <li>
-          <a href="Opel List.php">opel list</a>
 
-        </li>
 
-        <li>
-          <a href="BMW.html">bmw list</a>
 
-        </li>
 
         <li>
-          <a href="">list employees</a>
+          <a href="EmployeeList.php">Employees List</a>
 
         </li>
 

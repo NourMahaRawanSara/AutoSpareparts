@@ -46,7 +46,7 @@ echo $userid;
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="#">HOME</a> </li>
+				<li class="active"><a href="AccountantLogin.php">HOME</a> </li>
 				<li class="dropdown">
 					</span></a>
 
