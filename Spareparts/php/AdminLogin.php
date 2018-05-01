@@ -57,13 +57,13 @@ echo $userid;
 					</ul>
 				</li>
 				<li>
-					<a href="Catalogue.html">Catalogue</a>
+					<a href="../Catalogue.html">Catalogue</a>
 
 				</li>
 
 
 				<li>
-					<a href="contact.html">CONTACT</a>
+					<a href="../contact.html">CONTACT</a>
 
 				</li>
                 <li>

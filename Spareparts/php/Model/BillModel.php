@@ -17,19 +17,23 @@
 
       }
 
-      /*public function AddSP(){
+      public function AddBill(){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
-          $sql = "INSERT INTO `sparepart` (`ID`, `Picture`, `OEM`, `InternalCode`, `CompanyProviderCode`, `IsCorrupted`, `CountryOfOrigin`, `Price`) 
-VALUES (NULL, '$this->Picture', '$this->OEM', '$this->InternalCode', '$this->CompanyProviderCode', '$this->IsCorrupted', '$this->CountryOfOrigin', '$this->Price')";
-
+          $sql = "INSERT INTO `bill` (`ID`, `OrderDetailsID`, `SparePartID`, 
+                                      `UserID`, `Total Amount`, `CommissionID`, `Notes`) 
+                  VALUES 
+                  (NULL, '$this->OrderDetailsID', '$this->SparePartID', 
+                  '$this->UserID', '$this->TotalAmount', 
+                  '$this->CommissionID', '$this->Notes')
+                  ";
           $result = $mysqli->query($sql);
       }
 
       public function Edit(){
 
-      }*/
+      }
 
       public function View(){
           $db = ConnectionToDB::getInstance();

@@ -2,7 +2,8 @@
 session_start();
 $_SESSION['auth'] = "true";
 require("ConnectionToDB.php");
-require("User.php");
+//require("User.php");
+require_once ("Model/UserModel.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,11 +14,11 @@ require("User.php");
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="style/slider.css">
-	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="style/login.css">
+	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -59,8 +60,20 @@ require("User.php");
 	 <div id="content2">
              <form method="POST" action="">
 			<div id="form1">
-        
-User ID <input type="text" name="userid" placeholder="Enter User ID" required>
+
+                <?php
+                echo "User ID:.<br>";
+                $userID = new UserModel();
+                $User = $userID->ViewAll();
+
+                echo "<select name='userid'>";
+                for ($i=0; $i<=$User; $i++){
+                    echo "<option
+                            value='".$userID->ID[$i]."'>".$userID->Username[$i]."
+                    </option>";
+                }
+                echo "</select>.<br>";
+                ?>
       <input type="submit" value="Delete User" name="submit" >
 
     </form>
@@ -68,9 +81,9 @@ User ID <input type="text" name="userid" placeholder="Enter User ID" required>
 </html>
 <?php
 if (isset($_POST['submit'])){
-    $userid = $_POST['userid'];
-    $user = new User;
-    $user->id = $userid;
-    $user->deleteUser($user);
-  }
+
+    $user = new UserModel();
+    $user->ID = $_POST['userid'];
+    $user->Delete();
+}
 ?>

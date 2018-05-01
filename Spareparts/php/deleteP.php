@@ -2,7 +2,7 @@
 session_start();
 $_SESSION['auth'] = "true";
 require("ConnectionToDB.php");
-require("Product.php");
+require_once("Model/SparepartModel.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,11 +13,11 @@ require("Product.php");
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="style/slider.css">
-	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="style/login.css">
+	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -59,8 +59,19 @@ require("Product.php");
 	 <div id="content2">
              <form method="POST" action="">
 			<div id="form1">
+<?php
+                echo "Product ID:.<br>";
+                $spID = new SparepartModel();
+                $sparepart = $spID->View();
 
-Product ID <input type="text" name="productid" placeholder="Enter Product ID" required>
+                echo "<select name='productid'>";
+                    for ($i=0; $i<=$sparepart; $i++){
+                    echo "<option
+                            value='".$spID->ID[$i]."'>".$spID->OEM[$i]."
+                    </option>";
+                    }
+                    echo "</select>.<br>";
+?>
       <input type="submit" value="Delete Product" name="submit" >
 
     </form>
@@ -68,9 +79,9 @@ Product ID <input type="text" name="productid" placeholder="Enter Product ID" re
 </html>
 <?php
 if (isset($_POST['submit'])){
-    $spid = $_POST['productid'];
-    $sp = new SparePart;
-    $sp->id = $spid;
-    $sp->deleteProd($sp);
+
+    $sp = new SparepartModel();
+    $sp->ID = $_POST['productid'];
+    $sp->Delete();
   }
 ?>

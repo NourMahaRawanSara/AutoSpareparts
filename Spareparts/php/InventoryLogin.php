@@ -14,10 +14,10 @@ echo $userid;
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="style/slider.css">
-	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
 </head>
 <body>
 <!-- Header -->
@@ -42,7 +42,7 @@ echo $userid;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand logo" href="#"><img src="image/logoo.png" alt="logo"></a>
+				<a class="navbar-brand logo" href="#"><img src="../image/logoo.png" alt="logo"></a>
 			</div>
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
@@ -58,7 +58,7 @@ echo $userid;
 					</ul>
 				</li>
 				<li>
-					<a href="Catalogue.html">Catalogue</a>
+					<a href="../Catalogue.html">Catalogue</a>
 
 				</li>
 
@@ -90,7 +90,7 @@ echo $userid;
 	<div id="carousel-up" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner " role="listbox">
 			<div class="item active">
-				<img src="image/spare22.jpg" alt="oldcar">
+				<img src="../image/spare22.jpg" alt="oldcar">
 				<div class="carousel-caption">
 					<h2></h2>
 					<p> <br>
@@ -111,7 +111,7 @@ echo $userid;
 			<div class="col-lg-6 costumcol colborder1">
 				<div class="row costumrow">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
-						<img src="image/sp3.jpg" alt="porsche" height="365 px">
+						<img src="../image/sp3.jpg" alt="porsche" height="365 px">
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
@@ -137,7 +137,7 @@ echo $userid;
 			<div class="col-lg-6 costumcol colborder2">
 				<div class="row costumrow">
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
-						<img src="image/ss1.jpg" alt="porsche1" height="365px">
+						<img src="../image/ss1.jpg" alt="porsche1" height="365px">
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
 						<div class="featurecontant">
@@ -170,7 +170,7 @@ echo $userid;
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 				<div class="txthover">
-					<img src="image/spare1.jpg" alt="car1">
+					<img src="../image/spare1.jpg" alt="car1">
 						<div class="txtcontent">
 							<div class="stars">
 								<div class="glyphicon glyphicon-star"></div>
@@ -193,7 +193,7 @@ echo $userid;
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
 				<div class="txthover">
-					<img src="image/spare2.jpg" alt="car2">
+					<img src="../image/spare2.jpg" alt="car2">
 						<div class="txtcontent">
 							<div class="stars">
 								<div class="glyphicon glyphicon-star"></div>
@@ -263,7 +263,7 @@ echo $userid;
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 				<div class="txthover">
-					<img src="image/hose2.jpg" alt="car5">
+					<img src="../image/hose2.jpg" alt="car5">
 						<div class="txtcontent">
 							<div class="stars">
 								<div class="glyphicon glyphicon-star"></div>
@@ -287,7 +287,7 @@ echo $userid;
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 				<div class="txthover">
-					<img src="image/spare5.jpg" alt="car6">
+					<img src="../image/spare5.jpg" alt="car6">
 						<div class="txtcontent">
 							<div class="stars">
 								<div class="glyphicon glyphicon-star"></div>
@@ -311,7 +311,7 @@ echo $userid;
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 				<div class="txthover">
-					<img src="image/hose.jpg" alt="car7">
+					<img src="../image/hose.jpg" alt="car7">
 						<div class="txtcontent">
 							<div class="stars">
 								<div class="glyphicon glyphicon-star"></div>
@@ -335,7 +335,7 @@ echo $userid;
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 				<div class="txthover">
-					<img src="image/rubber.jpg" alt="car8">
+					<img src="../image/rubber.jpg" alt="car8">
 						<div class="txtcontent">
 							<div class="stars">
 								<div class="glyphicon glyphicon-star"></div>
@@ -364,11 +364,11 @@ echo $userid;
 	<!-- ______________________________________________________Bottom Menu ______________________________-->
 	<div class="bottommenu">
 		<div class="bottomlogo">
-		<span class="dotlogo">&bullet;</span><img src="image/pic1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>
+		<span class="dotlogo">&bullet;</span><img src="../image/pic1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>
 		</div>
 		<p>"Welcome to our Website" <br>
 		 </p>
-		 <img src="image/line.png" alt="line"> <br>
+		 <img src="../image/line.png" alt="line"> <br>
 			<div class="footer">
 				<div class="copyright">
 				  &copy; Copy right 2016 | <a href="#">Privacy </a>| <a href="#">Policy</a>
@@ -380,10 +380,10 @@ echo $userid;
 	</div>
 </div>
 
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
-<script type="text/javascript" src="source/js/isotope.js"></script>
-<script type="text/javascript" src="source/js/myscript.js"></script>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+<script type="text/javascript" src="../source/js/isotope.js"></script>
+<script type="text/javascript" src="../source/js/myscript.js"></script>
+<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
+<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 </body>
 </html>

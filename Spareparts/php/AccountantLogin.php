@@ -48,13 +48,8 @@ echo $userid;
 			<ul class="nav navbar-nav" id="navbarontop">
 				<li class="active"><a href="#">HOME</a> </li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LIST <span class="caret"></span></a>
-					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="Vw and Skoda List.html">Volkswagen</a></li>
-						<li><a href="BMW.html">BMW</a></li>
-						<li><a href="Vw and Skoda List.html">Skoda</a></li>
-						<li><a href="Opel List.html">OPEL</a></li>
-					</ul>
+					</span></a>
+
 				</li>
 				<li>
 					<a href="addP.php">Add Sparepart</a>

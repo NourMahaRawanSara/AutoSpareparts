@@ -2,6 +2,7 @@
 require_once "ConnectionToDB.php";
   //require("Product.php");
 require_once("Model/SparepartModel.php");
+require_once ("Model/CountryofOriginModel.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -74,9 +75,19 @@ require_once("Model/SparepartModel.php");
  <strong>Is the item corrupted?:<strong><br>Yes
 	 <input type="radio" name="corr" ><br>No
 	 <input type="radio" name="corr"><br>
+<?php
+echo "Country of Origin:.<br>";
+$Country = new CountryofOriginModel();
+$COO = $Country->View();
 
-	 <strong>Country Of Origin:<strong><br>
-		 <input type="text" name="countroforigin" placeholder="Country Of Origin" required><br>
+echo "<select name='countryoforigin'>";
+for ($i=0; $i<=$COO; $i++){
+    echo "<option
+                value='".$Country->ID[$i]."'>".$Country->Name[$i]."
+        </option>";
+}
+echo "</select>.<br>";
+?>
 
 
 <strong>Price:</strong><br>
@@ -99,7 +110,7 @@ require_once("Model/SparepartModel.php");
 			$InternalCode = $_POST['IC'];
 			$PCode=$_POST['Pcode'];
 			$corr = $_POST['corr'];
-			$CountryOfOrigin=$_POST['countroforigin'];
+			//$CountryOfOrigin=$_POST['countroforigin'];
 			$price = $_POST['price'];
 
 			$sp = new SparepartModel();
@@ -108,7 +119,7 @@ require_once("Model/SparepartModel.php");
 			$sp->InternalCode = $InternalCode;
 			$sp->CompanyProviderCode=$PCode;
 			$sp->IsCorrupted = $corr;
-			$sp->CountryOfOrigin=$CountryOfOrigin;
+			$sp->CountryOfOriginID=$_POST['countryoforigin'];
 			$sp->Price = $price;
 
 

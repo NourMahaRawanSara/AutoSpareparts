@@ -92,14 +92,12 @@ WHERE `id` = '$this->ID' ";
 
           }
 
-
-      public function View(){
-          $db = dbconnect::getInstance();
+      public function ViewAll(){
+          $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
-          $sql = "SELECT eventdetails.ID, eventdetails.EventName, eventdetails.Price, eventtype.Name 
-                  FROM `eventdetails`,`eventtype`
-                  WHERE eventdetails.EventTypeID = eventtype.ID
+          $sql = "SELECT * FROM `user`
+                  
                 ";
           $result = $mysqli->query($sql);
           $i=-1;
@@ -107,15 +105,55 @@ WHERE `id` = '$this->ID' ";
           while($row =mysqli_fetch_array($result)){
               $i++;
               $this->ID[$i]=$row['ID'];
-              $this->Name[$i]=$row['EventName'];
-              $this->Price[$i]=$row['Price'];
-              $this->EventTypeID[$i]=$row['Name'];
+              $this->FName[$i]=$row['Fname'];
+              $this->LName[$i]=$row['Lname'];
+              $this->Mobile[$i]=$row['Mobile'];
+              $this->DOB[$i]=$row['DateOfBirth'];
+              $this->Email[$i]=$row['Email'];
+              $this->UserTypeID[$i]=$row['UserTypeID'];
+              $this->Username[$i]=$row['Username'];
+              $this->Password[$i]=$row['password'];
+
+          }
+          return $i;
+      }
+      public function View(){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+
+          $sql = "SELECT * FROM `user`
+                  WHERE `UserTypeID` = 3
+                ";
+          $result = $mysqli->query($sql);
+          $i=-1;
+
+          while($row =mysqli_fetch_array($result)){
+              $i++;
+              $this->ID[$i]=$row['ID'];
+              $this->FName[$i]=$row['Fname'];
+              $this->LName[$i]=$row['Lname'];
+              $this->Mobile[$i]=$row['Mobile'];
+              $this->DOB[$i]=$row['DateOfBirth'];
+              $this->Email[$i]=$row['Email'];
+              $this->UserTypeID[$i]=$row['UserTypeID'];
+              $this->Username[$i]=$row['Username'];
+              $this->Password[$i]=$row['password'];
+
           }
           return $i;
       }
 
-      public function Delete(){
 
+      public function Delete(){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+          $sql = "DELETE FROM user
+             WHERE `ID` = $this->ID
+             ";
+          $result = $mysqli->query($sql);
+          if($sql){
+              echo 'deleted';
+          }
       }
 
   }

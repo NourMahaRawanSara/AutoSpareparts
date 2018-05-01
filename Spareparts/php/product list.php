@@ -1,7 +1,8 @@
 <?php
 	session_start();
 	require_once("ConnectionToDB.php");
-	require("Product.php");
+	//require("Product.php");
+	require_once ("Model/SparepartModel.php")
 ?>
 
 <!DOCTYPE html>
@@ -84,12 +85,42 @@
 	</nav>
 </div>
 <div style=" text-align: center; padding-top:30px;">
+    <table>
+        <thead>
+            <tr>
+            <th>ID </th>
+            <th>Picture</th>
+            <th>OEM</th>
+            <th>Internal Code</th>
+            <th>Company Provider Code</th>
+            <th>Corrupted </th>
+            <th>Country Of Origin</th>
+            <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
 
-<?php
-$sp = new SparePart;
+                $sp = new SparepartModel();
+                $numberOfParts  = $sp->View();
 
-$sp->selectAllProdInDb();
- 	?>
+                for ($i = 0; $i<=$numberOfParts; $i++){
+                    echo "<tr>";
+                    echo "<td>".$sp->ID[$i]."</td>";
+                    echo "<td><img src=" .'../image/'.$sp->Picture[$i]." alt='not found' width='130px' height='130px'></td>";
+                    echo "<td>".$sp->OEM[$i]."</td>";
+                    echo "<td>".$sp->InternalCode[$i]."</td>";
+                    echo "<td>".$sp->CompanyProviderCode[$i]."</td>";
+                    echo "<td>".$sp->IsCorrupted[$i]."</td>";
+                    echo "<td>".$sp->CountryOfOriginID[$i]."</td>";
+                    echo "<td>".$sp->Price[$i]."</td>";
+                    echo "</tr>";
+                }
+ 	        ?>
+
+        </tbody>
+
+    </table>
 
 
 </div>

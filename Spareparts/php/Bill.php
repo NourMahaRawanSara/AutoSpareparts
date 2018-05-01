@@ -2,7 +2,9 @@
 require_once "ConnectionToDB.php";
   //require("Product.php");
 require_once("Model/SparepartModel.php");
-require_once ("Model/UserModel.php")
+require_once ("Model/UserModel.php");
+require_once ("Model/CommissionModel.php");
+require_once ("Model/BillModel.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -87,35 +89,105 @@ require_once ("Model/UserModel.php")
                 value='".$SparePart->ID[$i]."'>".$SparePart->ID[$i]."
         </option>";
         }
-        echo "</select>";
+        echo "</select>.<br>";
+
+        echo "OEM:.<br>";
+        $SparePart = new SparePartModel();
+        $SPOEM = $SparePart->View();
+
+        echo "<select name='SparePartID'>";
+        for ($i=0; $i<=$SPOEM; $i++){
+            echo "<option
+                value='".$SparePart->ID[$i]."'>".$SparePart->OEM[$i]."
+        </option>";
+        }
+        echo "</select>.<br>";
+
+        echo "Country of Origin:.<br>";
+        $SparePart = new SparePartModel();
+        $SPCountryOfOrigin = $SparePart->View();
+
+        echo "<select name='SparePartCountryOfOrigin'>";
+        for ($i=0; $i<=$SPCountryOfOrigin; $i++){
+            echo "<option
+                value='".$SparePart->CountryOfOrigin[$i]."'>".$SparePart->CountryOfOrigin[$i]."
+        </option>";
+        }
+        echo "</select>.<br>";
+
+        echo "Price Per Item:.<br>";
+        $orderDetails = new OrderDetailsModel();
+        $ODPricePerItem = $orderDetails->View();
+
+        echo "<select name='PricePerItem'>";
+        for ($i=0; $i<=$ODPricePerItem; $i++){
+            echo "<option
+                value='".$orderDetails->PricePerItem[$i]."'>".$orderDetails->PricePerItem[$i]."
+        </option>";
+        }
+        echo "</select>.<br>";
+
+        echo "Quantity:.<br>";
+        $orderDetails = new OrderDetailsModel();
+        $ODQuantity = $orderDetails->View();
+
+        echo "<select name='Quantity'>";
+        for ($i=0; $i<=$ODQuantity; $i++){
+            echo "<option
+                value='".$orderDetails->Quantity[$i]."'>".$orderDetails->Quantity[$i]."
+        </option>";
+        }
+        echo "</select>.<br>";
+
+        echo "Salesman Name:.<br>";
+        $User = new UserModel();
+        $salesmanName = $User->View();
+
+        echo "<select name='Salesman'>";
+        for ($i=0; $i<=$salesmanName; $i++){
+            echo "<option
+                value='".$User->ID[$i]."'>".$User->FName[$i]."
+        </option>";
+        }
+        echo "</select>.<br>";
+
+
+        echo "Date Of Delivery:.<br>";
+        $orderDetails = new OrderDetailsModel();
+        $ODDOD = $orderDetails->View();
+
+        echo "<select name='DateOfDelivery'>";
+        for ($i=0; $i<=$ODDOD; $i++){
+            echo "<option
+                value='".$orderDetails->DateOfDelivery[$i]."'>".$orderDetails->DateOfDelivery[$i]."
+        </option>";
+        }
+        echo "</select>.<br>";
+
+
+        echo "Commission:.<br>";
+        $Commission = new CommissionModel();
+        $Com = $Commission->View();
+
+        echo "<select name='Commission'>";
+        for ($i=0; $i<=$Com; $i++){
+            echo "<option
+                value='".$Commission->ID[$i]."'>".$Commission->Percentage[$i]."
+        </option>";
+        }
+        echo "</select>.<br>";
+
+
+
     ?>
 
     <br>
-   Spare Part Name:<br> <!--hanakhodha men el sparepart ID RETREIEVE-->
-    <input class="input-adjust" type="text" id="firstname1"> </br>
-    Code:<br> <!--hanakhodha men el sparepart ID RETREIEVE-->
-    <input class="input-adjust" type="text" id="lastname1"></br></br>
-    Country Of Origin:<br> <!--hanakhodha men el sparepart ID COMBOBOX-->
-    <input class="input-adjust" type="text" id="address1"></br></br>
-    Price/Item:<br> <!--hanakhodha men el order details RETREIEVE-->
-    <input class="input-adjust" type="text" id="city1"></br>
-    Quantity:<br> <!--hanakhodha men el order details-->
-    <input class="input-adjust" type="text" id="country1"></br>
-
-
-    Salesman Name:<br> <!--hanakhodha men el User ID-->
-    <input class="input-adjust" type="text" id="country1"></br>
-
-    Selling Date:<br> <!--hanakhodha men el order details id RETRIEVE-->
-    <input class="input-adjust" type="text" id="country1"></br>
-
-    Commission:<br> <!--hanakhodha men el commission CALCULATE-->
-    <input class="input-adjust" type="text" id="country1"></br>
 
     Total Amount :<br> <!-- CALCULATE-->
-    <input class="input-adjust" type="text" id="country1"></br>
+    <input class="input-adjust" type="text" name="TotalAmount"></br>
+
     Notes:<br> <!--input 3ady-->
-    <input class="input-adjust" type="text" id="country1"></br>
+    <textarea name="notes" rows="4" cols="50"></textarea></br>
 
 		<input type="submit" name="submit" value="Submit">
 		<input type="reset" value="Cancel">
@@ -128,25 +200,26 @@ require_once ("Model/UserModel.php")
 <?php
 
 	if (isset($_POST['submit'])){
-			$pic = $_POST['orderDetailsID'];
-			$OEM=$_POST['OEM'];
-			$InternalCode = $_POST['IC'];
-			$PCode=$_POST['Pcode'];
-			$corr = $_POST['corr'];
-			$CountryOfOrigin=$_POST['countroforigin'];
-			$price = $_POST['price'];
 
-			$sp = new SparepartModel();
-			$sp->Picture = $pic;
-			$sp->OEM=$OEM;
-			$sp->InternalCode = $InternalCode;
-			$sp->CompanyProviderCode=$PCode;
-			$sp->IsCorrupted = $corr;
-			$sp->CountryOfOrigin=$CountryOfOrigin;
-			$sp->Price = $price;
+			$orderDetailsID = $_POST['orderDetailsID'];
+			$Sparepart=$_POST['SparePartID'];
+			$User = $_POST['Salesman'];
+			$TAmount=$_POST['TotalAmount'];
+			$comm = $_POST['Commission'];
+			$Notes=$_POST['notes'];
 
 
-			$sp->AddSP();
+			$bill = new BillModel();
+			$bill->OrderDetailsID = $orderDetailsID;
+			$bill->SparePartID=$Sparepart;
+			$bill->UserID = $User;
+			$bill->TotalAmount=$TAmount;
+			$bill->CommissionID = $comm;
+			$bill->Notes=$Notes;
+
+
+
+			$bill->AddBill();
 
 	}
 ?>
