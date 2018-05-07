@@ -1,10 +1,11 @@
 <?php
-
+session_start();
   require_once("Model/OrderModel.php");
 require_once("Model/CurrencyModel.php");
 require_once("Model/TaxesModel.php");
 require_once("Model/PaymentMethodModel.php");
 require_once("Model/OrderTypeModel.php");
+require_once("Model/OrderDetailsModel.php");
   require_once "ConnectionToDB.php";
 ?>
 <!DOCTYPE html>
@@ -62,12 +63,8 @@ require_once("Model/OrderTypeModel.php");
      <div id="form1">
              <form method="POST">
 
-        <strong>First Name:<strong><br>
-       <input type="text" name="fname" placeholder="First Name" required><br>
 
-      <strong>Last Name:<strong><br>
-       <input type="text" name="Lname" placeholder="Last Name" required><br>
-              <?php
+                 <?php
               echo "Payment Method:.<br>";
               $PM = new PaymentMethodModel();
               $Name = $PM->View();
@@ -83,9 +80,19 @@ require_once("Model/OrderTypeModel.php");
 
               <br>
 
-         <strong>Total Price:<strong><br>
-          <input type="text" name="Username" placeholder="TotalPrice" required><br>
+                 <?php
+                 echo "OEM:.<br>";
+                 $TP = new SparepartModel();
+                 $part = $TP->View();
 
+                 echo "<select name='part'>";
+                 for ($i=0; $i<=$part; $i++){
+                     echo "<option
+                               value='".$TP->ID[$i]."'>".$TP->OEM[$i]."
+                       </option>";
+                 }
+                 echo "</select>.<br>";
+                 ?>
                  <?php
                  echo "Order Type:.<br>";
                  $OT = new OrderTypeModel();
@@ -99,20 +106,8 @@ require_once("Model/OrderTypeModel.php");
                  }
                  echo "</select>.<br>";
                  ?>
-         <strong>Password:<strong><br>
-           <input type="password" name="password" placeholder="Password" required><br>
 
-           <strong>DateOfOrder:<strong><br>
-             <input type="date" name="Mobile" placeholder="DateOfOrder" required><br>
 
-                  <!-- <strong>Currency Name:<strong><br>
-             <select>
-
-                      <option value="Euro">Euro</option>
-               <option value="Turkish Lira">Turkish Lira</option>
-               <option value="Renminbi">Renminbi</option>
-
-             </select>-->
                    <?php
                    echo "Currency Name:.<br>";
                    $CN = new CurrencyModel();
@@ -140,11 +135,7 @@ require_once("Model/OrderTypeModel.php");
                    }
                    echo "</select>.<br>";
                    ?>
-             <!--<strong>Taxes Type:</strong><br>
-                     <select>
-               <option value="Sales Tax">Sales Tax</option>
-        <option value="Income Tax">Income Tax</option>
-               </select>-->
+
 
 
 
@@ -160,29 +151,21 @@ require_once("Model/OrderTypeModel.php");
       </div>
       <?php
           if (isset($_POST['submit'])){
-              $fname = $_POST['UserID'];
-              $lname=$_POST['paymentMethodID'];
-              $dob = $_POST['totalprice'];
-              $mobile=$_POST['OrderTypeID'];
-              $email = $_POST['DateOfOrder'];
-              $username=$_POST['CurrencyID'];
-              $password = $_POST['TaxesID'];
 
-              $user = new OrderModel();
-              $user->FName = $UserID;
-              $user->LName=$paymentMethodID;
-              $user->DOB = $totalprice;
-              $user->Mobile=$OrderTypeID;
-              $user->Email = $DateOfOrder;
-              $user->Username=$CurrencyID;
-                $user->Username=$TaxesID;
+              date_default_timezone_set('Africa/Cairo');
+              $date = date('m/d/Y H:i:s', time());
 
+              $order = new OrderModel();
+              $order->UserID = $_SESSION['userID'];
+              $order->paymentMethodID=$_POST['paymentmethod'];
+              $order->totalprice=$_POST['Price'];
+              $order->OrderTypeID=$_POST['OrderType'];
+              $order->DateOfOrder=$date;
+              $order->CurrencyID = $_POST['CurrencyName'];
+              $order->TaxesID = $_POST['TaxesType'];
 
+              $order->AddOrder();
 
-              $user->AddOrder();
-
-//              $user->insertInDb($fname,$lname,$dob,$mobile,$email,
-//            /*$usertype,*/$username,$password);
 
           }
         ?>

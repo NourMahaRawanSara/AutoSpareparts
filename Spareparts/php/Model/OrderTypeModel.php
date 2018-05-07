@@ -28,7 +28,7 @@
 
 
       public function View(){
-          $db = dbconnect::getInstance();
+          $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
           $sql = "SELECT * FROM `ordertype`";
