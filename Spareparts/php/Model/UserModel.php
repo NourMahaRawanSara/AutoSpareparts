@@ -32,14 +32,30 @@
           $num_row = mysqli_num_rows($result);
           $row = mysqli_fetch_array($result);
 
-          echo $num_row;
+          //echo $num_row;
           echo "<br>";
           if( $row >0 )
           {
-              $_SESSION["ID"] = $row['ID'];
+              $_SESSION["userID"] = $row['ID'];
               $_SESSION["UserTypeID"] = $row['UserTypeID'];
-              echo $row['UserTypeID'];
-              return $row['UserTypeID'];
+              //echo $row['UserTypeID'];
+              $userTypeID = $row['UserTypeID'];
+
+              $sql = "SELECT pages.PhysicalID
+                      FROM usertypepage
+                      INNER JOIN pages ON usertypepage.PageID = pages.ID
+                      WHERE usertypepage.UserTypeID = $userTypeID
+                      ";
+
+              $result = $mysqli->query($sql);
+              $row = mysqli_fetch_array($result);
+
+              if ($row > 0){
+                  echo $row['PhysicalID'];
+                  header('Location: ' .$row['PhysicalID']);
+              }
+
+//              return $row['UserTypeID'];
           }
           else
           {
@@ -83,9 +99,9 @@
           $mysqli = $db->getConnection();
 
           $sql = "UPDATE user SET `Fname`='$this->Fname',
-`Lname`='$this->LName',`DateOfBirth`='$this->DOB', `Mobile`='$this->Mobile',
-`Email` = '$this->Email',`Username`='$this->Username',`password`='$this->Password' 
-WHERE `id` = '$this->ID' ";
+                    `Lname`='$this->LName',`DateOfBirth`='$this->DOB', `Mobile`='$this->Mobile',
+                    `Email` = '$this->Email',`Username`='$this->Username',`password`='$this->Password' 
+                    WHERE `id` = '$this->ID' ";
           $result =$mysqli->query($sql);
 
 

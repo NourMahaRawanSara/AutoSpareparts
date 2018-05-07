@@ -1,6 +1,10 @@
 <?php
 
   require_once("Model/OrderModel.php");
+require_once("Model/CurrencyModel.php");
+require_once("Model/TaxesModel.php");
+require_once("Model/PaymentMethodModel.php");
+require_once("Model/OrderTypeModel.php");
   require_once "ConnectionToDB.php";
 ?>
 <!DOCTYPE html>
@@ -63,36 +67,84 @@
 
       <strong>Last Name:<strong><br>
        <input type="text" name="Lname" placeholder="Last Name" required><br>
-<select>
-       <strong>payment method:<strong><br>
-         <option value="Cash">cash</option>
-  <option value="CreditCard">CreditCard</option>
-  <option value="Installments">Installments</option>
-  <option value="Paypal">Paypal</option>
-</select>
+              <?php
+              echo "Payment Method:.<br>";
+              $PM = new PaymentMethodModel();
+              $Name = $PM->View();
 
-         <strong>TotalPrice:<strong><br>
+              echo "<select name='paymentmethod'>";
+              for ($i=0; $i<=$Name; $i++){
+                  echo "<option
+                               value='".$PM->ID[$i]."'>".$PM->Name[$i]."
+                       </option>";
+              }
+              echo "</select>.<br>";
+              ?>
+
+              <br>
+
+         <strong>Total Price:<strong><br>
           <input type="text" name="Username" placeholder="TotalPrice" required><br>
 
+                 <?php
+                 echo "Order Type:.<br>";
+                 $OT = new OrderTypeModel();
+                 $Online = $OT->View();
 
+                 echo "<select name='OrderType'>";
+                 for ($i=0; $i<=$Online; $i++){
+                     echo "<option
+                               value='".$OT->ID[$i]."'>".$OT->IsOnline[$i]."
+                       </option>";
+                 }
+                 echo "</select>.<br>";
+                 ?>
          <strong>Password:<strong><br>
            <input type="password" name="password" placeholder="Password" required><br>
 
            <strong>DateOfOrder:<strong><br>
              <input type="date" name="Mobile" placeholder="DateOfOrder" required><br>
 
-
+                  <!-- <strong>Currency Name:<strong><br>
              <select>
-                    <strong>Currency Name:<strong><br>
+
                       <option value="Euro">Euro</option>
                <option value="Turkish Lira">Turkish Lira</option>
                <option value="Renminbi">Renminbi</option>
 
-             </select>
+             </select>-->
+                   <?php
+                   echo "Currency Name:.<br>";
+                   $CN = new CurrencyModel();
+                   $Name = $CN->View();
 
-             <strong>Taxes Type:<strong><br>
+                   echo "<select name='CurrencyName'>";
+                       for ($i=0; $i<=$Name; $i++){
+                       echo "<option
+                               value='".$CN->ID[$i]."'>".$CN->Name[$i]."
+                       </option>";
+                       }
+                       echo "</select>.<br>";
+                       ?>
+<br>
+                   <?php
+                   echo "Taxes Name:.<br>";
+                   $TN = new TaxesModel();
+                   $Type = $TN->View();
+
+                   echo "<select name='TaxesType'>";
+                   for ($i=0; $i<=$Type; $i++){
+                       echo "<option
+                               value='".$TN->ID[$i]."'>".$TN->Type[$i]."
+                       </option>";
+                   }
+                   echo "</select>.<br>";
+                   ?>
+             <!--<strong>Taxes Type:</strong><br>
+                     <select>
                <option value="Sales Tax">Sales Tax</option>
         <option value="Income Tax">Income Tax</option>
+               </select>-->
 
 
 

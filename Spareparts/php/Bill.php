@@ -141,7 +141,7 @@ require_once ("Model/BillModel.php");
 
         echo "Salesman Name:.<br>";
         $User = new UserModel();
-        $salesmanName = $User->View();
+        $salesmanName = $User->ViewSales();
 
         echo "<select name='Salesman'>";
         for ($i=0; $i<=$salesmanName; $i++){

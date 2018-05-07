@@ -1,8 +1,8 @@
 <?php
 session_start();
-$userid=$_SESSION['userID'];
+$userid = $_SESSION['userID'];
 
-echo $userid;
+//echo $userid;
 ?>
 <!doctype html>
 <html>
@@ -27,7 +27,7 @@ echo $userid;
 
 			</ul>
 			<ul class="logreg">
-
+                <a href="logout.php">Logout</a>
 
 			</ul>
 	</div>
@@ -52,18 +52,16 @@ echo $userid;
 
 				</li>
 				<li>
-					<a href="addP.php">Add Sparepart</a>
+					<a href="bill.php">Fill new bill</a>
 
 				</li>
 
 
 				<li>
-					<a href="CountP.php">Updated Number of Available Spare Parts</a>
+					<a href="">Send bill to Inventory manager</a>
 
 				</li>
-                <li>
-                    <a href=""> Confirm Order</a>
-                </li>
+
 
 
 		</div>
