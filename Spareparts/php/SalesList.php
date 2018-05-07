@@ -40,9 +40,7 @@ require_once ("Model/UserModel.php")
 				<li>Give us a call : +66666666 </li>
 			</ul>
 			<ul class="logreg">
-				<li><a href="login.html">Login </a> </li>
-				<li><a href="Sign up.html"><span class="register">Register</span></a></li>
-			</ul>
+				</ul>
 	</div>
 	<!-- Navbar Up -->
 	<nav class="topnavbar navbar-default topnav">
@@ -105,7 +103,7 @@ require_once ("Model/UserModel.php")
         <?php
 
         $user = new UserModel();
-        $numberOfUsers  = $user->View();
+        $numberOfUsers  = $user->ViewSales();
 
         for ($i = 0; $i<=$numberOfUsers; $i++){
             echo "<tr>";
@@ -128,7 +126,7 @@ require_once ("Model/UserModel.php")
 
 </div>
 <div style=" text-align: center; padding-top:50px;">
-<a href="addE.php"> <button type="button" value="add">Add</button> </a>
+<a href="addEmp.php"> <button type="button" value="add">Add</button> </a>
 <a href="updateE.php"><button type="button" value="edit">update</button> </a>
 <a href="deletE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>

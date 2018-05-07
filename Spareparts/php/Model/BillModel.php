@@ -50,21 +50,21 @@
               $this->OrderDetailsID[$i]=$row['OrderDetailsID'];
               $this->SparePartID[$i]=$row['SparePartID'];
               $this->UserID[$i]=$row['UserID'];
-              $this->TotalAmount[$i]=$row['TotalAmount'];
+              $this->TotalAmount[$i]=$row['Total Amount'];
               $this->CommissionID[$i]=$row['CommissionID'];
               $this->Notes[$i]=$row['Notes'];
           }
           return $i;
       }
 
-      public function CounterSP(){
+     /* public function CounterSP(){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
           $sql = "SELECT COUNT(*) FROM sparepart";
           $result = $mysqli->query($sql);
           return $result;
-      }
+      }*/
       public function Delete(){
 
       }

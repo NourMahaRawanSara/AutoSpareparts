@@ -6,6 +6,7 @@ require_once("Model/TaxesModel.php");
 require_once("Model/PaymentMethodModel.php");
 require_once("Model/OrderTypeModel.php");
 require_once("Model/OrderDetailsModel.php");
+require_once("Model/SparepartModel.php");
   require_once "ConnectionToDB.php";
 ?>
 <!DOCTYPE html>
