@@ -2,11 +2,11 @@
 <?php
 session_start();
 require_once ("Model/UserModel.php");
-$user = new user;
+$user = new UserModel();
 ?>
 <html>
 <body>
-<h1>Welcome <?php echo $_SESSION['FName']; ?> </h1>
+<h1>Welcome <?php echo $_SESSION['userID']; ?> </h1>
 <br>
 
 <a href="editprofile.php">Edit Profile</a>

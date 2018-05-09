@@ -44,16 +44,8 @@ require_once ("Model/BillModel.php");
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="../index.html">HOME</a> </li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
-					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="#">VOLkSWAGEN</a></li>
-						<li><a href="#">BMW</a></li>
-						<li><a href="#">SKODA</a></li>
-						<li><a href="#">OPEL</a></li>
-					</ul>
-				</li>
+				<li class="active"><a href="AccountantLogin.php">HOME</a> </li>
+
 			</ul>
 		</div>
 	</nav>

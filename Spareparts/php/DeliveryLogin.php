@@ -1,7 +1,13 @@
 <?php
-session_start();
-$userid=$_SESSION['userID'];
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['userID']))
+{
 
+    header('Location: login.php');
+    exit();
+}
 echo $userid;
 ?>
 <!doctype html>

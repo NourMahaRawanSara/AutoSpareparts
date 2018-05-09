@@ -66,6 +66,8 @@
               $this->Quantity[$i] = $row['Quantity'];
               $this->ParentID[$i] = $row['ParentID'];
           }
+
+          return $i;
       }
 
       public function Delete($ID){

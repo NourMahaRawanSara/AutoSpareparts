@@ -19,12 +19,12 @@
 		if($conn == false){
 			die(mysqli_connect_error());
 		}
-		$select_sql = "SELECT * FROM product WHERE productname = '{$ProductName}'";
+		$select_sql = "SELECT * FROM 'sparepart' WHERE OEM = '{$ProductName}'";
 		$result = mysqli_query($conn, $select_sql);
 		
 
 		if($errorFlag){
-			header('Location: http://localhost/delta/addE.php');
+			header('Location: http://localhost/delta/addEmp.php');
 			exit();
 		}
 		else{

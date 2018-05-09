@@ -10,11 +10,7 @@ require_once ("Model/ControllingResourcesModel.php")
 
 <html>
 <head>
-	<style>
-	table, th, td {
-	    border: 1px solid black;
-	}
-	</style>
+
 	<meta charset="UTF-8">
 	<title>Delta Auto Spare Parts </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
@@ -79,35 +75,24 @@ require_once ("Model/ControllingResourcesModel.php")
 	</nav>
 </div>
 <div style=" text-align: center; padding-top:30px;">
-    <table>
-        <thead>
-        <tr>
-            <th>ID </th>
-            <th>Resource Name</th>
-            <th>Quantity</th>
-            <!--<th>Resource Type</th>-->
+    <?php
+    echo "Resource Type:.<br>";
+    $resource = new ControllingResourcesModel();
+    $COO = $resource->View();
 
-        </tr>
-        </thead>
-        <tbody>
-        <?php
+    echo "<select name='resource' onchange='getChilds(this.value)' id='resource'>";
+    for ($i=0; $i<=$COO; $i++){
+        echo "<option
+                value='".$resource->ID[$i]."'>".$resource->Name[$i]."
+        </option>";
+    }
+    echo "</select>.<br>";
+    ?>
 
-        $resource = new ControllingResourcesModel();
-        $viewresource  = $resource->View();
 
-        for ($i = 0; $i<=$viewresource; $i++){
-            echo "<tr>";
-            echo "<td>".$resource->ID[$i]."</td>";
-            echo "<td>".$resource->Name[$i]."</td>";
-            echo "<td>".$resource->Quantity[$i]."</td>";
-            //echo "<td>".$resource->ParentID[$i]."</td>";
-             echo "</tr>";
-        }
-        ?>
+    <div id="viewAjax">
 
-        </tbody>
-
-    </table>
+    </div>
 
 
 </div>
@@ -117,6 +102,22 @@ require_once ("Model/ControllingResourcesModel.php")
 <a href="deletE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
 
+<script>
+    function getChilds(parentID) {
+
+        var resourceID = document.getElementById("resource").value;
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("viewAjax").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "AjaxViewResources.php?parentID=" + parentID, true);
+        xmlhttp.send();
+    }
+
+</script>
 
 <script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.js"></script>
 <script type="text/javascript" src="../source/js/isotope.js"></script>

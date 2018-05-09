@@ -289,6 +289,7 @@
               $this->Username[$i]=$row['Username'];
               $this->Password[$i]=$row['password'];
           }
+          return $i;
       }
 
       public function Delete(){

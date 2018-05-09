@@ -7,11 +7,11 @@
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="style/slider.css">
-	<link rel="stylesheet" type="text/css" href="style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="style/contactstyle.css">
+	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../style/contactstyle.css">
 </head>
 <body>
 <!-- Header -->
@@ -20,10 +20,7 @@
 			<ul class="givusacall">
 				<li>Give us a call : +66666666 </li>
 			</ul>
-			<ul class="logreg">
-				<li><a href="#">Login </a> </li>
-				<li><a href="#"><span class="register">Register</span></a></li>
-			</ul>
+
 	</div>
 	<!-- Navbar Up -->
 	<nav class="topnavbar navbar-default topnav">
@@ -40,16 +37,8 @@
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="index.html">HOME</a> </li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LIST <span class="caret"></span></a>
-					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="#">Volkswagen</a></li>
-						<li><a href="#">BMW</a></li>
-						<li><a href="#">SKODA</a></li>
-						<li><a href="#">OPEL</a></li>
-					</ul>
-				</li>
+				<li class="active"><a href="../index.html">HOME</a> </li>
+
 
 
 
@@ -62,7 +51,7 @@
 	<div id="carousel-up" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner " role="listbox">
 			<div class="item active">
-				<img src="image/spp1.jpg" alt="oldcar" width="1600px">
+				<img src="../image/spp1.jpg" alt="oldcar" width="1600px">
 				<div class="carousel-caption">
 					<h2></h2>
 					<p><br>
@@ -78,28 +67,22 @@
 
 <p>
 	<?php
-		include "ConnectionToDB.php";
-		$db = new dbconnect;
-		$sql = "SELECT * FROM `pages`
-						WHERE `Name` = 'Contact Us'
-						";
-		$result= $db->executesql($sql);
-		if($row=mysqli_fetch_array($result)){
-			$html = $row["HTML"];
-			$id=$row["ID"];
-		}
-		echo $html;
+    require_once "ConnectionToDB.php";
+		require_once "Model/PagesModel.php";
+		$pages=new PagesModel();
+		$pages->ViewContact();
+		//echo $html;
 		?>
 </p>
 <div class="allcontain">
 	<div class="contact">
 		<div class="newslettercontent">
 			<div class="leftside">
-				<img id="image_border" src="image/border.png" alt="border">
+				<img id="image_border" src="../image/border.png" alt="border">
 					<div class="contact-form">
 						<h1>Contact Us </h1>
 							<div class="form-group group-coustume">
-								<input type="text" class="form-control name-form" placeholder="Name">
+                                <input type="text" class="form-control name-form" placeholder="Name">
 								<input type="text" class="form-control email-form" placeholder="E-mail">
 								<input type="text" class="form-control subject-form" placeholder="Subject">
 								<textarea rows="4" cols="50" class="message-form"></textarea>
@@ -115,18 +98,10 @@
 
 	</div>
 </div>
-<div class="footer">
-	<div class="copyright">
-		&copy; Copy right 2016 | <a href="#">Privacy </a>| <a href="#">Policy</a>
-	</div>
-	<div class="atisda">
-		 Designed by <a href="http://www.webdomus.net/">Web Domus Italia - Web Agency </a>
-	</div>
-</div>
 
 
 
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+
 <script>
 
 var myCenter=new google.maps.LatLng(41.567197,14.681526);
@@ -152,8 +127,8 @@ marker.setMap(map);
 
 </script>
 
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
-<script type="text/javascript" src="source/js/myscript.js"></script> <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+<script type="text/javascript" src="../source/js/myscript.js"></script> <script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 
 <script>
 	$(window).resize(function(){
@@ -170,7 +145,18 @@ marker.setMap(map);
 	});
 
 </script>
-<script type="text/javascript" src="source/js/myscript.js"></script>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
+<div class="footer">
+    <div class="copyright">
+        &copy; Copy right 2016 | <a href="#">Privacy </a>| <a href="#">Policy</a>
+    </div>
+    <div class="atisda">
+        Designed by <a href="http://www.webdomus.net/">Web Domus Italia - Web Agency </a>
+    </div>
+</div>
+<script type="text/javascript" src="../source/js/myscript.js"></script>
+
+<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
 </body>
 </html>

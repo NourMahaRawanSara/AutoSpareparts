@@ -1,8 +1,13 @@
 <?php
-session_start();
-$userid = $_SESSION['userID'];
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['userID']))
+{
 
-//echo $userid;
+    header('Location: login.php');
+    exit();
+}
 ?>
 <!doctype html>
 <html>
@@ -62,7 +67,10 @@ $userid = $_SESSION['userID'];
 
 				</li>
 
+                <li>
+                    <a href="contact.php">Contact Us</a>
 
+                </li>
 
 		</div>
 	</nav>

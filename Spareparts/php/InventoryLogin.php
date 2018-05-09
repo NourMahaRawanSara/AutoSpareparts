@@ -1,9 +1,13 @@
 <?php
-session_start();
-$userid=$_SESSION['userID'];
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['userID']))
+{
 
-echo $userid;
-//$spid=$_SESSION['productID'];
+    header('Location: login.php');
+    exit();
+}
 ?>
 <!doctype html>
 <html>
@@ -28,6 +32,7 @@ echo $userid;
 
 			</ul>
 			<ul class="logreg">
+                <a href="logout.php">Logout</a>
 
 
 			</ul>
@@ -47,7 +52,7 @@ echo $userid;
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="#">HOME</a> </li>
+				<li class="active"><a href="InventoryLogin.php">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LIST <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
@@ -64,22 +69,20 @@ echo $userid;
 
 
 				<li>
-					<a href="contact.html">CONTACT</a>
+					<a href="contact.php">CONTACT</a>
 
 				</li>
-        <li>
-					<a href="addP.php">Add Spare Part</a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Products <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdowncostume">
+                        <li><a href="addP.php">Add Spare Part</a></li>
+                        <li><a href="deleteP.php">Delete Spare Part</a></li>
+                        <li><a href="editP.php">Edit Spare Part</a></li>
+                         </ul>
+                </li>
 
-				</li>
-        <li>
-					<a href="deleteP.php">Delete Spare Part</a>
 
-				</li>
 
-        <li>
-					<a href="editP.php">Edit Spare Part</a>
-
-				</li>
 			</ul>
 
 		</div>

@@ -1,8 +1,13 @@
 <?php
-session_start();
-$userid=$_SESSION['userID'];
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['userID']))
+{
 
-echo $userid;
+    header('Location: login.php');
+    exit();
+}
 ?>
 <!doctype html>
 <html>
@@ -47,7 +52,7 @@ echo $userid;
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
 				<li class="active"><a href="#">HOME</a> </li>
-				<li class="dropdown">
+				<!--<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LIST <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
 						<li><a href="Vw and Skoda List.html">Volkswagen</a></li>
@@ -55,7 +60,7 @@ echo $userid;
 						<li><a href="Vw and Skoda List.html">Skoda</a></li>
 						<li><a href="Opel List.html">OPEL</a></li>
 					</ul>
-				</li>
+				</li>-->
 				<li>
 					<a href="../Catalogue.html">Catalogue</a>
 
@@ -63,22 +68,25 @@ echo $userid;
 
 
 				<li>
-					<a href="../contact.html">CONTACT</a>
+					<a href="contact.php">CONTACT</a>
 
 				</li>
-                <li>
-                    <a href="AddEmp.php"> Add User</a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Employee <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdowncostume">
+                        <li><a href="AddEmp.php">Add User</a></li>
+                        <li><a href="editE.php">Edit User</a></li>
+                        <li><a href="DeleteE.php">Delete User</a></li>
+                         </ul>
                 </li>
-        <li>
-					<a href="editE.php">Edit User</a>
 
-				</li>
 
-        <li>
-					<a href="deleteE.php">Delete User</a>
 
-				</li>
 			</ul>
+            <ul class="logreg">
+                <a href="logout.php">Logout</a>
+
+            </ul>
 
 		</div>
 	</nav>

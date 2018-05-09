@@ -2,7 +2,7 @@
 	session_start();
 	require("ConnectionToDB.php");
 	//require("User.php");
-require_once ("Model/UserModel.php")
+require_once ("Model/UserTypeModel.php");
 ?>
 
 <!DOCTYPE html>
@@ -10,11 +10,7 @@ require_once ("Model/UserModel.php")
 
 <html>
 <head>
-	<style>
-	table, th, td {
-	    border: 1px solid black;
-	}
-	</style>
+
 	<meta charset="UTF-8">
 	<title>Delta Auto Spare Parts </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
@@ -59,7 +55,7 @@ require_once ("Model/UserModel.php")
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="#">HOME</a> </li>
+				<li class="active"><a href="AdminLogin.php">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
@@ -88,51 +84,50 @@ require_once ("Model/UserModel.php")
 	</nav>
 </div>
 <div style=" text-align: center; padding-top:30px;">
-    <table>
-        <thead>
-        <tr>
-            <th>ID </th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Mobile</th>
-            <th>Date Of Birth</th>
-            <th>Email</th>
-            <th>UserType</th>
-            <th>Username</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
+    <?php
+    echo "User Type:.<br>";
+    $user = new UserTypeModel();
+    $COO = $user->View();
 
-        $user = new UserModel();
-        $numberOfUsers  = $user->ViewAll();
-
-        for ($i = 0; $i<=$numberOfUsers; $i++){
-            echo "<tr>";
-            echo "<td>".$user->ID[$i]."</td>";
-            echo "<td>".$user->FName[$i]."</td>";
-            echo "<td>".$user->LName[$i]."</td>";
-            echo "<td>".$user->Mobile[$i]."</td>";
-            echo "<td>".$user->DOB[$i]."</td>";
-            echo "<td>".$user->Email[$i]."</td>";
-            echo "<td>".$user->UserTypeID[$i]."</td>";
-            echo "<td>".$user->Username[$i]."</td>";
-            echo "</tr>";
+    echo "<select name='usertype' onchange='getEmployees(this.value)' id='employees'>";
+        for ($i=0; $i<=$COO; $i++){
+        echo "<option
+                value='".$user->ID[$i]."'>".$user->Position[$i]."
+        </option>";
         }
-        ?>
+        echo "</select>.<br>";
+    ?>
 
-        </tbody>
 
-    </table>
+    <div id="viewAjax">
+
+    </div>
+
+
 
 
 </div>
 <div style=" text-align: center; padding-top:50px;">
 <a href="addE.php"> <button type="button" value="add">Add</button> </a>
 <a href="updateE.php"><button type="button" value="edit">update</button> </a>
-<a href="deletE.php"><button type="button" value="delete ">delete!</button> </a>
+<a href="deleteE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
+<script>
+    function getEmployees(UserTypeID) {
 
+        var typeID = document.getElementById("employees").value;
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("viewAjax").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "AjaxViewEmployees.php?UserTypeID=" + UserTypeID, true);
+        xmlhttp.send();
+    }
+
+</script>
 
 <script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.js"></script>
 <script type="text/javascript" src="../source/js/isotope.js"></script>

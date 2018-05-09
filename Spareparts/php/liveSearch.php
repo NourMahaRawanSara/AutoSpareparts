@@ -5,13 +5,13 @@
 
    $db = ConnectionToDB::getInstance();
    $mysqli = $db->getConnection();
+   //$querySearch = $_GET['$userinput'];
 
-   $querySearch = $_GET["q"];
-
-		$queryStatement = "SELECT * FROM user WHERE 'Fname' LIKE '%$querySearch%' OR 'Lname' LIKE '%$querySearch%'";
+		$queryStatement = "SELECT * FROM user WHERE 'Fname' LIKE '%k%' OR 'Lname' LIKE '%k%'";
 
    $result = $mysqli->query($queryStatement);
-		while($row =mysqli_fetch_array($result)){
+
+		while($row = mysqli_fetch_array($result)){
 			echo $row["Fname"] . " " . $row["Lname"] . "<br>";
 		}
 

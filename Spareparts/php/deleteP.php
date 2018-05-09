@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['auth'] = "true";
+//$_SESSION['auth'] = "true";
 require("ConnectionToDB.php");
 require_once("Model/SparepartModel.php")
 ?>
@@ -42,16 +42,8 @@ require_once("Model/SparepartModel.php")
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="index.html">HOME</a> </li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
-					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="Vw and Skoda List.html">VOLkSWAGEN</a></li>
-						<li><a href="BMW.html">BMW</a></li>
-						<li><a href="Vw and Skoda List.html">SKODA</a></li>
-						<li><a href="Opel List.html">OPEL</a></li>
-					</ul>
-				</li>
+				<li class="active"><a href="InventoryLogin.php">HOME</a> </li>
+
 			</ul>
 		</div>
 	</nav>

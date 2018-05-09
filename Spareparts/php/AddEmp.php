@@ -41,8 +41,8 @@ require_once "ConnectionToDB.php";
 </div>
 <div class="collapse navbar-collapse" id="upmenu">
 <ul class="nav navbar-nav" id="navbarontop">
-<li class="active"><a href="index.html">HOME</a> </li>
-<li class="dropdown">
+<li class="active"><a href="AdminLogin.php">HOME</a> </li>
+<!--<li class="dropdown">
 <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
 <ul class="dropdown-menu dropdowncostume">
 <li><a href="Vw and Skoda List.html">VOLkSWAGEN</a></li>
@@ -50,7 +50,7 @@ require_once "ConnectionToDB.php";
 <li><a href="Vw and Skoda List.html">SKODA</a></li>
 <li><a href="Opel List.html">OPEL</a></li>
 </ul>
-</li>
+</li>-->
 </ul>
 </div>
 </nav>

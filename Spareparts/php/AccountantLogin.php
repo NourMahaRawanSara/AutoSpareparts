@@ -1,6 +1,14 @@
 <?php
-session_start();
-$userid = $_SESSION['userID'];
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['userID']))
+{
+
+    header('Location: login.php');
+    exit();
+}
+//$userid = $_SESSION['userID'];
 
 //echo $userid;
 ?>
@@ -61,6 +69,10 @@ $userid = $_SESSION['userID'];
 					<a href="">Send bill to Inventory manager</a>
 
 				</li>
+                <li>
+                    <a href="">View Bill</a>
+
+                </li>
 
 
 
