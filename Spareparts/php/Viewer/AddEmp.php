@@ -1,8 +1,9 @@
 <?php
 
-require_once("Model/UserModel.php");
-require_once("Model/UserTypeModel.php");
-require_once "ConnectionToDB.php";
+require_once("../Model/UserModel.php");
+require_once("../Model/UserTypeModel.php");
+
+require_once "../ConnectionToDB.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,11 +13,11 @@ require_once "ConnectionToDB.php";
 <meta name="author" content="Web Domus Italia">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
-<link rel="stylesheet" type="text/css" href="../style/slider.css">
-<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
-<link rel="stylesheet" type="text/css" href="../style/login.css">
+<link rel="stylesheet" type="text/css" href="../../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../source/font-awesome-4.5.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="../../style/slider.css">
+<link rel="stylesheet" type="text/css" href="../../style/mystyle.css">
+<link rel="stylesheet" type="text/css" href="../../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -41,7 +42,7 @@ require_once "ConnectionToDB.php";
 </div>
 <div class="collapse navbar-collapse" id="upmenu">
 <ul class="nav navbar-nav" id="navbarontop">
-<li class="active"><a href="AdminLogin.php">HOME</a> </li>
+<li class="active"><a href="../AdminLogin.php">HOME</a> </li>
 <!--<li class="dropdown">
 <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
 <ul class="dropdown-menu dropdowncostume">
@@ -57,7 +58,7 @@ require_once "ConnectionToDB.php";
 <div id="content">
 <div id="content2">
 <div id="form1">
-<form method="POST">
+<form method="POST" action="../Controller/AddEmpController.php">
 
 <strong>First Name:<strong><br>
 <input type="text" name="fname" placeholder="Firstname" required><br>
@@ -82,52 +83,27 @@ require_once "ConnectionToDB.php";
         <strong>Birthdate:</strong><br>
         <input type="date" name="DateOfBirth"><br>
         <br>
-<?php
+        <?php
         echo "Add User:.<br>";
         $Usertype = new UserTypeModel();
         $position = $Usertype->View();
 
         echo "<select name='position'>";
-            for ($i=0; $i<=$position; $i++){
+        for ($i=0; $i<=$position; $i++){
             echo "<option
                     value='".$Usertype->ID[$i]."'>".$Usertype->Position[$i]."
             </option>";
-            }
-            echo "</select>.<br>";
-?>
+        }
+        echo "</select>.<br>";
+        ?>
 
         <input type="submit" name="submit" value="Submit">
         <input type="reset" value="Cancel">
 </div>
-</form>
+    </form>
 
 </div>
 </div>
 </div>
-<?php
-if (isset($_POST['submit'])){
-$fname = $_POST['fname'];
-$lname=$_POST['Lname'];
-$dob = $_POST['DateOfBirth'];
-$mobile=$_POST['Mobile'];
-$email = $_POST['Email'];
-$username=$_POST['Username'];
-$password = $_POST['password'];
-
-$user = new UserModel();
-$user->FName = $fname;
-$user->LName=$lname;
-$user->DOB = $dob;
-$user->Mobile=$mobile;
-$user->Email = $email;
-$user->Username=$username;
-$user->Password = md5($password);
-$user->UserTypeID = $_POST['position'];
-
-$user->AdminAdd();
-
-
-}
-?>
 </body>
 </html>

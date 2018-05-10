@@ -11,6 +11,7 @@
       public $IsCorrupted;
       public $CountryOfOriginID;
       public $Price;
+      public $Name;
 
 
       public function __construct(){
@@ -25,7 +26,7 @@
                   `CompanyProviderCode`, `IsCorrupted`, `CountryOfOriginID`, `Price`) 
                   VALUES (NULL, '$this->Picture', '$this->OEM', '$this->InternalCode', 
                   '$this->CompanyProviderCode', '$this->IsCorrupted', '$this->CountryOfOriginID', 
-                  '$this->Price')
+                  '$this->Price','$this->Name')
                   ";
 
 
@@ -40,7 +41,27 @@
       public function Edit(){
 
       }
+    public function ViewALL(){
+        $db = ConnectionToDB::getInstance();
+        $mysqli = $db->getConnection();
+        $sql = "SELECT * FROM `sparepart`";
+        $result = $mysqli->query($sql);
+        $i=-1;
 
+        while($row =mysqli_fetch_array($result)){
+            $i++;
+            $this->ID[$i]=$row['ID'];
+            $this->Picture[$i]=$row['Picture'];
+            $this->OEM[$i]=$row['OEM'];
+            $this->InternalCode[$i]=$row['InternalCode'];
+            $this->CompanyProviderCode[$i]=$row['CompanyProviderCode'];
+            $this->IsCorrupted[$i]=$row['IsCorrupted'];
+            $this->CountryOfOriginID[$i]=$row['Name'];
+            $this->Price[$i]=$row['Price'];
+            $this->Name[$i]=$row['Name'];
+        }
+        return $i;
+    }
       public function View(){
 
   $db = ConnectionToDB::getInstance();
@@ -63,6 +84,7 @@
   $this->IsCorrupted[$i]=$row['IsCorrupted'];
   $this->CountryOfOriginID[$i]=$row['Name'];
   $this->Price[$i]=$row['Price'];
+  $this->Name[$i]=$row['Name'];
   }
 return $i;
 }

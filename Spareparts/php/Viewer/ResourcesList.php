@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	require("ConnectionToDB.php");
+	require("../ConnectionToDB.php");
 	//require("User.php");
-require_once ("Model/ControllingResourcesModel.php")
+require_once ("../Model/ControllingResourcesModel.php")
 ?>
 
 <!DOCTYPE html>
@@ -17,15 +17,15 @@ require_once ("Model/ControllingResourcesModel.php")
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="../style/slider.css">
-	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../../style/mystyle.css">
 	<!-- Bootstrap Core CSS -->
-	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="../../css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 	<!-- Custom CSS -->
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="../../css/style.css" rel='stylesheet' type='text/css' />
 </head>
 <body>
 
@@ -67,7 +67,7 @@ require_once ("Model/ControllingResourcesModel.php")
 					</ul>
 				</li>
 				<li>
-					<a href="contact.html">CONTACT</a>
+					<a href="../contact.php">CONTACT</a>
 
 				</li>
 			</ul>
@@ -97,32 +97,43 @@ require_once ("Model/ControllingResourcesModel.php")
 
 </div>
 <div style=" text-align: center; padding-top:50px;">
-<a href="ControllingResources.php"> <button type="button" value="add">Add</button> </a>
-<a href="updateE.php"><button type="button" value="edit">update</button> </a>
-<a href="deletE.php"><button type="button" value="delete ">delete!</button> </a>
+<a href="../ControllingResources.php"> <button type="button" value="add">Add</button> </a>
+<a href="../editE.php"><button type="button" value="edit">update</button> </a>
+<a href="../deleteE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
 
 <script>
     function getChilds(parentID) {
+        $.ajax({
+            url: "../Controller/AjaxViewResources.php",
+            method: "POST",
+            data: {
+                parentID: parentID
+            },
+            success: function (answer) {
+                $("#viewAjax").html(answer);
 
-        var resourceID = document.getElementById("resource").value;
-
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("viewAjax").innerHTML = this.responseText;
             }
-        };
-        xmlhttp.open("GET", "AjaxViewResources.php?parentID=" + parentID, true);
-        xmlhttp.send();
+        });
     }
+
+    //     var resourceID = document.getElementById("resource").value;
+    //
+    //     var xmlhttp = new XMLHttpRequest();
+    //     xmlhttp.onreadystatechange = function() {
+    //         if (this.readyState == 4 && this.status == 200) {
+    //             document.getElementById("viewAjax").innerHTML = this.responseText;
+    //         }
+    //     };
+    //     xmlhttp.open("GET", "AjaxViewResources.php?parentID=" + parentID, true);
+    //     xmlhttp.send();
+    // }
 
 </script>
 
-<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.js"></script>
-<script type="text/javascript" src="../source/js/isotope.js"></script>
-<script type="text/javascript" src="../source/js/myscript.js"></script>
-<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
-<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+<script type="text/javascript" src="../../source/js/isotope.js"></script>
+<script type="text/javascript" src="../../source/js/myscript.js"></script>
+<script type="text/javascript" src="../../source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 </body>
 </html>

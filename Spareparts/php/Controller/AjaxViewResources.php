@@ -2,8 +2,8 @@
 
     $parentID = $_REQUEST['parentID'];
 
-    require_once "ConnectionToDB.php";
-    require_once "Model/ControllingResourcesModel.php";
+    require_once "../ConnectionToDB.php";
+    require_once "../Model/ControllingResourcesModel.php";
 
 
 
@@ -13,7 +13,7 @@
 
     if ($numberOfChilds < 0){
         echo "</br>";
-        echo "<label style='color: red'><strong>No available resource, please add one first</strong></label>";
+        echo "<label style='color: darkblue'>Add one first</label>";
     }else {
 
         echo "<table>";

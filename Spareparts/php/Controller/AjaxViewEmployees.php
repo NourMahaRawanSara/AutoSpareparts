@@ -3,8 +3,8 @@
     $usertype = $_REQUEST['UserTypeID'];
 
 
-    require_once "ConnectionToDB.php";
-    require_once "Model/UserModel.php";
+    require_once "../ConnectionToDB.php";
+    require_once "../Model/UserModel.php";
 
 
     $user = new UserModel();
@@ -13,7 +13,7 @@
 
     if ($usertypes < 0){
         echo "</br>";
-        echo "<label style='color: red'><strong>No available Users, please add one first</strong></label>";
+        echo "<label style='color: darkblue'>Add one first</label>";
     }else {
 
         echo "<table>";

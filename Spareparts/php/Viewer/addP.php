@@ -1,8 +1,8 @@
 <?php
-require_once "ConnectionToDB.php";
+require_once "../ConnectionToDB.php";
   //require("Product.php");
-require_once("Model/SparepartModel.php");
-require_once ("Model/CountryofOriginModel.php")
+require_once("../Model/SparepartModel.php");
+require_once ("../Model/CountryofOriginModel.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,11 +13,11 @@ require_once ("Model/CountryofOriginModel.php")
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="../style/slider.css">
-	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="../style/login.css">
+	<link rel="stylesheet" type="text/css" href="../../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -37,12 +37,12 @@ require_once ("Model/CountryofOriginModel.php")
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand logo" href="#"><img src="../image/logo1.png" alt="logo"></a>
+				<a class="navbar-brand logo" href="#"><img src="../../image/logo1.png" alt="logo"></a>
 			</div>
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="InventoryLogin.php">HOME</a> </li>
+				<li class="active"><a href="../InventoryLogin.php">HOME</a> </li>
 				<li class="dropdown">
 
 					</ul>
@@ -52,7 +52,7 @@ require_once ("Model/CountryofOriginModel.php")
 	</nav>
 	<div id="content">
 	 <div id="content2">
-		 <form method="POST">
+		 <form method="POST" action="../Controller/addPController.php">
 <div id="form1">
 	<strong>Picture:<strong><br>
 		<center><input type="file" name="pic" accept="image/*"id="img"></center>
@@ -97,30 +97,6 @@ echo "</select>.<br>";
 		</div>
 </div>
 </div>
-<?php
 
-	if (isset($_POST['submit'])){
-			$pic = $_POST['pic'];
-			$OEM=$_POST['OEM'];
-			$InternalCode = $_POST['IC'];
-			$PCode=$_POST['Pcode'];
-			$corr = $_POST['corr'];
-			//$CountryOfOrigin=$_POST['countroforigin'];
-			$price = $_POST['price'];
-
-			$sp = new SparepartModel();
-			$sp->Picture = $pic;
-			$sp->OEM=$OEM;
-			$sp->InternalCode = $InternalCode;
-			$sp->CompanyProviderCode=$PCode;
-			$sp->IsCorrupted = $corr;
-			$sp->CountryOfOriginID=$_POST['countryoforigin'];
-			$sp->Price = $price;
-
-
-			$sp->AddSP();
-
-	}
-?>
 </body>
 </html>

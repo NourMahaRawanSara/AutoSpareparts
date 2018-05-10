@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	require("ConnectionToDB.php");
+	require("../ConnectionToDB.php");
 	//require("User.php");
-require_once ("Model/UserTypeModel.php");
+require_once ("../Model/UserTypeModel.php");
 ?>
 
 <!DOCTYPE html>
@@ -17,15 +17,15 @@ require_once ("Model/UserTypeModel.php");
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="../style/slider.css">
-	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../../style/mystyle.css">
 	<!-- Bootstrap Core CSS -->
-	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="../../css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 	<!-- Custom CSS -->
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="../../css/style.css" rel='stylesheet' type='text/css' />
 </head>
 <body>
 
@@ -36,8 +36,8 @@ require_once ("Model/UserTypeModel.php");
 				<li>Give us a call : +66666666 </li>
 			</ul>
 			<ul class="logreg">
-				<li><a href="login.html">Login </a> </li>
-				<li><a href="Sign up.html"><span class="register">Register</span></a></li>
+				<li><a href="../login.php">Login </a> </li>
+				<li><a href="../sign up.php"><span class="register">Register</span></a></li>
 			</ul>
 	</div>
 	<!-- Navbar Up -->
@@ -55,28 +55,28 @@ require_once ("Model/UserTypeModel.php");
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="AdminLogin.php">HOME</a> </li>
+				<li class="active"><a href="../AdminLogin.php">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="SalesList.php">Sales List</a></li>
-						<li><a href="InventoryList.php">Inventory List</a></li>
-						<li><a href="AccountantList.php">Accountant List</a></li>
-						<li><a href="DeliveryList.php">Delivery List</a></li>
-                        <li><a href="AdminList.php">Admin List</a></li>
+						<li><a href="../SalesList.php">Sales List</a></li>
+						<li><a href="../InventoryList.php">Inventory List</a></li>
+						<li><a href="../AccountantList.php">Accountant List</a></li>
+						<li><a href="../DeliveryList.php">Delivery List</a></li>
+                        <li><a href="../AdminList.php">Admin List</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">spare parts <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="pricelist.php">price list</a></li>
+						<li><a href="../priceList.php">price list</a></li>
 						<li><a href="#">spare orders</a></li>
 						<li><a href="#">total income </a></li>
 
 					</ul>
 				</li>
 				<li>
-					<a href="contact.php">CONTACT</a>
+					<a href="../contact.php">CONTACT</a>
 
 				</li>
 			</ul>
@@ -108,9 +108,9 @@ require_once ("Model/UserTypeModel.php");
 
 </div>
 <div style=" text-align: center; padding-top:50px;">
-<a href="addE.php"> <button type="button" value="add">Add</button> </a>
-<a href="updateE.php"><button type="button" value="edit">update</button> </a>
-<a href="deleteE.php"><button type="button" value="delete ">delete!</button> </a>
+<a href="../Viewer/AddEmp.php"> <button type="button" value="add">Add</button> </a>
+<a href="../editE.php"><button type="button" value="edit">update</button> </a>
+<a href="../deleteE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
 <script>
     function getEmployees(UserTypeID) {
@@ -129,10 +129,10 @@ require_once ("Model/UserTypeModel.php");
 
 </script>
 
-<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.js"></script>
-<script type="text/javascript" src="../source/js/isotope.js"></script>
-<script type="text/javascript" src="../source/js/myscript.js"></script>
-<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
-<script type="text/javascript" src="../source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+<script type="text/javascript" src="../../source/js/isotope.js"></script>
+<script type="text/javascript" src="../../source/js/myscript.js"></script>
+<script type="text/javascript" src="../../source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
+<script type="text/javascript" src="../../source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 </body>
 </html>

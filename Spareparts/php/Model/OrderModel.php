@@ -11,6 +11,8 @@
       public $DateOfOrder;
       public $CurrencyID;
       public $TaxesID;
+      public $DeliveryFees;
+      public $BillID;
 
 
 
@@ -55,22 +57,23 @@ WHERE `id` = '$this->ID' ";
 
 
       public function View(){
-          $db = dbconnect::getInstance();
+          $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
-          $sql = "SELECT eventdetails.ID, eventdetails.EventName, eventdetails.Price, eventtype.Name
-                  FROM `eventdetails`,`eventtype`
-                  WHERE eventdetails.EventTypeID = eventtype.ID
-                ";
+          $sql = "SELECT * FROM `order` ";
           $result = $mysqli->query($sql);
           $i=-1;
 
           while($row =mysqli_fetch_array($result)){
               $i++;
               $this->ID[$i]=$row['ID'];
-              $this->Name[$i]=$row['EventName'];
-              $this->Price[$i]=$row['Price'];
-              $this->EventTypeID[$i]=$row['Name'];
+              $this->paymentMethodID[$i]=$row['paymentMethodID'];
+              $this->OrderTypeID[$i]=$row['OrderTypeID'];
+              $this->DateOfOrder[$i]=$row['DateOfOrder'];
+              $this->CurrencyID[$i]=$row['CurrencyID'];
+              $this->TaxesID[$i]=$row['TaxesID'];
+              $this->DeliveryFees[$i]=$row['DeliveryFees'];
+              $this->BillID[$i]=$row['BillID'];
           }
           return $i;
       }
