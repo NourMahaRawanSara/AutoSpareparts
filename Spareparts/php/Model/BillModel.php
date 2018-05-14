@@ -19,6 +19,7 @@
       public $price;
       public $DateOfDelivery;
       public $importertype;
+      public $CompanyName;
 
 
 
@@ -32,7 +33,8 @@
           $sql = "SELECT bill.* ,
 user.Fname,user.Lname, user.Mobile,
 sparepart.Name,sparepart.Price,
-orderdetails.DateOfDelivery
+orderdetails.DateOfDelivery,
+importertype.Type
 FROM bill
 INNER JOIN user 
 ON 
@@ -43,6 +45,9 @@ bill.SparePartID=sparepart.ID
 INNER JOIN orderdetails
 ON
 bill.OrderDetailsID=orderdetails.ID  
+INNER JOIN importertype
+ON
+bill.ImporterTypeID=importertype.ID 
 and bill.ID= '$InvoiceID'";
                   
               
@@ -67,7 +72,8 @@ and bill.ID= '$InvoiceID'";
               $this->SPName[$i] = $row['Name'];
               $this->price[$i]=$row['Price'];
               $this->DateOfDelivery=$row['DateOfDelivery'];
-              $this->importertype=$row['ImporterTypeID'];
+              //$this->importertype=$row['ImporterTypeID'];
+              $this->CompanyName=$row['Type'];
           }
 
           return $i;
@@ -144,7 +150,7 @@ and bill.ID= '$InvoiceID'";
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
-          $sql = "INSERT INTO `bill` (`ID`, `OrderDetailsID`, `SparePartID`, `UserID`, `SalesmanID`, `Total Amount`, `Subtotal`, `Notes`) VALUES (NULL, '$this->OrderDetailsID', '$this->SparePartID', '$this->UserID', '$this->Salesman', '$this->TotalAmount', '$this->subtotal', '$this->Notes',$this->importertype)
+          $sql = "INSERT INTO `bill` (`ID`, `OrderDetailsID`, `SparePartID`, `ImporterTypeID`, `UserID`, `SalesmanID`, `Total Amount`, `Subtotal`, `Notes`) VALUES (NULL, '$this->OrderDetailsID', '$this->SparePartID', '$this->importertype', '$this->UserID', '$this->Salesman', '$this->TotalAmount', '$this->subtotal', '$this->Notes')
 ";
           $result = $mysqli->query($sql);
           if(!$result) {

@@ -8,6 +8,7 @@ require_once ("../Model/BillModel.php");
 require_once ("../Model/CountryofOriginModel.php");
 require_once ("../Model/OrderModel.php");
 require_once ("../Model/OrderDetailsModel.php");
+require_once ("../Model/ImporterTypeModel.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -112,17 +113,17 @@ require_once ("../Model/OrderDetailsModel.php");
 
 
 
-        echo "Phone:.<br>";
-        $User = new UserModel();
-        $phone = $User->viewSpecificUser("7");
-
-        echo "<select name='client'>";
-        for ($i=0; $i<=$phone; $i++){
-            echo "<option
-                value='".$User->ID[$i]."'>".$User->Mobile[$i]."
-        </option>";
-        }
-        echo "</select>.<br>";
+//        echo "Phone:.<br>";
+//        $User = new UserModel();
+//        $phone = $User->viewSpecificUser("7");
+//
+//        echo "<select name='client'>";
+//        for ($i=0; $i<=$phone; $i++){
+//            echo "<option
+//                value='".$User->ID[$i]."'>".$User->Mobile[$i]."
+//        </option>";
+//        }
+//        echo "</select>.<br>";
 
         echo "Price/Item:.<br>";
         $ppi = new OrderDetailsModel();
@@ -136,6 +137,17 @@ require_once ("../Model/OrderDetailsModel.php");
         }
         echo "</select>.<br>";
 
+    echo "Importer Type:.<br>";
+    $imp = new ImporterTypeModel();
+    $type = $imp->View();
+
+    echo "<select name='imptype'>";
+    for ($i=0; $i<=$type; $i++){
+        echo "<option
+                value='".$imp->ID[$i]."'>".$imp->Type[$i]."
+        </option>";
+    }
+    echo "</select>.<br>";
     ?>
     <strong>Date Of Order:.</strong> <br>
     <input class="input-adjust" type="date" name="dateoforder" placeholder="Date Of Order" required><br>

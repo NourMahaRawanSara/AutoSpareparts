@@ -2,8 +2,9 @@
 require('fpdf181/fpdf.php');
 require_once ('Model/BillModel.php');
 require_once ('Model/UserModel.php');
-
+require_once ('Model/ImporterTypeModel.php');
 require_once ('ConnectionToDB.php');
+
 $InvoiceID=$_REQUEST['InvoiceID'];
 session_start();
 
@@ -53,11 +54,12 @@ $pdf->Cell(90,0,$Bill->Fname[$x],0,1);
 
 
 
-$pdf->Cell(10,5,'',0,1);
-$pdf->Cell(90,0,'[Company Name]',0,1);
 
 //$pdf->Cell(10,5,'',0,1);
 //$pdf->Cell(90,0,'[Address]',0,1);
+
+$pdf->Cell(10,5,'',0,1);
+$pdf->Cell(90,5,$Bill->CompanyName[$x],0,1);
 
 $pdf->Cell(10,5,'',0,1);
 $pdf->Cell(90,0,$Bill->mobile[$x],0,1);

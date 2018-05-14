@@ -6,6 +6,7 @@ require_once ("../Model/UserModel.php");
 require_once ("../Model/CommissionModel.php");
 require_once ("../Model/BillModel.php");
 require_once ("../Model/OrderModel.php");
+require_once ("../Model/ImporterTypeModel.php");
 ?>
 <?php
 
@@ -19,6 +20,7 @@ if (isset($_POST['submit'])){
     //$TAmount=$_POST['TotalAmount'];
     //$comm = $_POST['Commission'];
     $Notes=$_POST['notes'];
+    $Imp=$_POST['imptype'];
 
 
     $bill = new BillModel();
@@ -34,12 +36,10 @@ if (isset($_POST['submit'])){
     $total=$bill->TotalAmount($sub,$Sparepart);
     //$bill->TotalAmount=$TAmount;
     $bill->TotalAmount=$total;
+    $bill->importertype=$Imp;
      $bill->AddBill();
-    header('location:../invoice.php');
-    //$_SESSION['SPName'] = $Sparepart;
-   // $_SESSION['TotalAmount'] = $total;
-    //$_SESSION['subtotal'] = $sub;
-
+    header('location:../invoiceGenerator.php');
+   
 
 }
 ?>
