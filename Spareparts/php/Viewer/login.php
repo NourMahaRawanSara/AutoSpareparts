@@ -1,8 +1,8 @@
 <?php
 session_start();
 $_SESSION['auth'] = "true";
-  require("ConnectionToDB.php");
-  require_once("Model/UserModel.php");
+  require("../ConnectionToDB.php");
+  require_once("../Model/UserModel.php");
 	
 
 ?>
@@ -15,11 +15,11 @@ $_SESSION['auth'] = "true";
 	<meta name="author" content="Web Domus Italia">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../source/bootstrap-3.3.6-dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../source/font-awesome-4.5.0/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="../style/slider.css">
-	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
-	<link rel="stylesheet" type="text/css" href="../style/login.css">
+	<link rel="stylesheet" type="text/css" href="../../source/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../source/font-awesome-4.5.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../../style/slider.css">
+	<link rel="stylesheet" type="text/css" href="../../style/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="../../style/login.css">
 </head>
 <body>
 <!-- Header -->
@@ -48,10 +48,10 @@ $_SESSION['auth'] = "true";
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
-						<li><a href="../Vw and Skoda List.html">VOLkSWAGEN</a></li>
-						<li><a href="../BMW.html">BMW</a></li>
-						<li><a href="../Vw and Skoda List.html">SKODA</a></li>
-						<li><a href="../Opel List.html">OPEL</a></li>
+						<li><a href="../../Vw and Skoda List.html">VOLkSWAGEN</a></li>
+						<li><a href="../../BMW.html">BMW</a></li>
+						<li><a href="../../Vw and Skoda List.html">SKODA</a></li>
+						<li><a href="../../Opel List.html">OPEL</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -59,8 +59,8 @@ $_SESSION['auth'] = "true";
 	</nav>
 	<div id="content">
 	 <div id="content2">
-             <form method="POST" action="">
-			<div id="form1">
+             <form method="POST" action="../Controller/loginController.php">
+			<div id="form1" >
 
              Username:<br>
              <input type="text" name="username" placeholder="Enter Username" required>
@@ -70,31 +70,21 @@ $_SESSION['auth'] = "true";
             <br>
             <input type="submit" value="Submit" name="submit">
 			<input type="button" value="Cancel"><br>
-			<h4><a href="sign up.php">Don't have an account?</a></h4><br><br>
+			<h4><a href="../../sign up.php">Don't have an account?</a></h4><br><br>
 			</div>
             </form>
 			</div>
+<!--    --><?php
+//        if (isset($_POST['submit'])){
+//            if ($_SESSION['loggedIn'] == 0){
+//                echo 'Incorrect Username or Password';
+//            }
+//        }
+//
+//        ?>
 </div>
 </div>
 
-<?php
-    //session_start();
-//$_SESSION['ID']=$userID;
-    if (isset($_POST['submit'])){
-      $username = $_POST['username'];
-      $password = $_POST['password'];
 
-        $user = new UserModel;
-
-        $usertypeID=$user->login($username,$password);
-        $_SESSION['ID']=$usertypeID;
-
-        echo $usertypeID;
-
-
-
-    }
-
-?>
 </body>
 </html>

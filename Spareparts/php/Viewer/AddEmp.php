@@ -1,8 +1,6 @@
 <?php
-
 require_once("../Model/UserModel.php");
 require_once("../Model/UserTypeModel.php");
-
 require_once "../ConnectionToDB.php";
 ?>
 <!DOCTYPE html>
@@ -43,15 +41,7 @@ require_once "../ConnectionToDB.php";
 <div class="collapse navbar-collapse" id="upmenu">
 <ul class="nav navbar-nav" id="navbarontop">
 <li class="active"><a href="../AdminLogin.php">HOME</a> </li>
-<!--<li class="dropdown">
-<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
-<ul class="dropdown-menu dropdowncostume">
-<li><a href="Vw and Skoda List.html">VOLkSWAGEN</a></li>
-<li><a href="BMW.html">BMW</a></li>
-<li><a href="Vw and Skoda List.html">SKODA</a></li>
-<li><a href="Opel List.html">OPEL</a></li>
-</ul>
-</li>-->
+
 </ul>
 </div>
 </nav>

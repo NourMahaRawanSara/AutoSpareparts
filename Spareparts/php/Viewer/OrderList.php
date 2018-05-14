@@ -2,7 +2,8 @@
 session_start();
 require("../ConnectionToDB.php");
 //require("User.php");
-require_once ("../Model/UserTypeModel.php");
+require_once ("../Model/OrderModel.php");
+require_once ("../Model/OrderTypeModel.php")
 ?>
 
 <!DOCTYPE html>
@@ -36,8 +37,8 @@ require_once ("../Model/UserTypeModel.php");
             <li>Give us a call : +66666666 </li>
         </ul>
         <ul class="logreg">
-            <li><a href="../login.php">Login </a> </li>
-            <li><a href="../sign up.php"><span class="register">Register</span></a></li>
+            <li><a href="login.php">Login </a> </li>
+            <li><a href="sign up.php"><span class="register">Register</span></a></li>
         </ul>
     </div>
     <!-- Navbar Up -->
@@ -56,16 +57,7 @@ require_once ("../Model/UserTypeModel.php");
         <div class="collapse navbar-collapse" id="upmenu">
             <ul class="nav navbar-nav" id="navbarontop">
                 <li class="active"><a href="../AdminLogin.php">HOME</a> </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee <span class="caret"></span></a>
-                    <ul class="dropdown-menu dropdowncostume">
-                        <li><a href="../SalesList.php">Sales List</a></li>
-                        <li><a href="../InventoryList.php">Inventory List</a></li>
-                        <li><a href="../AccountantList.php">Accountant List</a></li>
-                        <li><a href="../DeliveryList.php">Delivery List</a></li>
-                        <li><a href="../AdminList.php">Admin List</a></li>
-                    </ul>
-                </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">spare parts <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdowncostume">
@@ -85,14 +77,14 @@ require_once ("../Model/UserTypeModel.php");
 </div>
 <div style=" text-align: center; padding-top:30px;">
     <?php
-    echo "User Type:.<br>";
-    $user = new UserTypeModel();
-    $COO = $user->View();
+    echo "Order:.<br>";
+    $order = new OrderTypeModel();
+    $type = $order->View();
 
-    echo "<select name='usertype' onchange='getEmployees(this.value)' id='employees'>";
-    for ($i=0; $i<=$COO; $i++){
+    echo "<select name='ordertypeID' onchange='getOrder(this.value)' id='ordertype'>";
+    for ($i=0; $i<=$type; $i++){
         echo "<option
-                value='".$user->ID[$i]."'>".$user->Position[$i]."
+                value='".$order->ID[$i]."'>".$order->IsOnline[$i]."
         </option>";
     }
     echo "</select>.<br>";
@@ -113,30 +105,30 @@ require_once ("../Model/UserTypeModel.php");
     <a href="../deleteE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
 <script>
-    function getEmployees(UserTypeID) {
+    function getOrder(OrdertypeID) {
+    //
+    //     $.ajax({
+    //         url: "../Controller/AjaxViewOrder.php",
+    //         method: "POST",
+    //         data: {
+    //             OrderType: OrdertypeID
+    //         },
+    //         success: function (answer) {
+    //             $("#viewAjax").html(answer);
+    //
+    //         }
+    //     });
 
-        $.ajax({
-            url: "../Controller/AjaxViewEmployees.php",
-            method: "POST",
-            data: {
-                UserTypeID: UserTypeID
-            },
-            success: function (answer) {
-                $("#viewAjax").html(answer);
+     var typeID = document.getElementById("ordertypeID").value;
 
-            }
-        });
-
-        // var typeID = document.getElementById("employees").value;
-        //
-        // var xmlhttp = new XMLHttpRequest();
-        // xmlhttp.onreadystatechange = function() {
-        //     if (this.readyState == 4 && this.status == 200) {
-        //         document.getElementById("viewAjax").innerHTML = this.responseText;
-        //     }
-        // };
-        // xmlhttp.open("GET", "AjaxViewEmployees.php?UserTypeID=" + UserTypeID, true);
-        // xmlhttp.send();
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("viewAjax").innerHTML = this.responseText;
+             }
+         };
+         xmlhttp.open("GET", "AjaxViewEmployees.php?OrderTypeID=" + OrderTypeID, true);
+         xmlhttp.send();
     }
 
 </script>

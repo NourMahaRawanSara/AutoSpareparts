@@ -59,9 +59,9 @@
           }
           else
           {
-              echo $num_row;
-              echo $row;
-              echo 'Incorrect Username or Password';
+              return $num_row;
+              //echo $row;
+
           }
 
 

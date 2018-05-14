@@ -10,14 +10,7 @@
 
 <html>
 <head>
-	<style>
-	table, th, td {
-	    border: 1px solid black;
-			padding: 15px;
 
-	}
-
-	</style>
 	<meta charset="UTF-8">
 	<title>Delta Auto Spare Parts </title>
 	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
@@ -89,7 +82,7 @@
         <thead>
             <tr>
             <th>ID </th>
-
+            <th> Name </th>
             <th>OEM</th>
 
             <th>Price</th>
@@ -99,12 +92,13 @@
             <?php
 
                 $sp = new SparepartModel();
-                $numberOfParts  = $sp->View();
+                $numberOfParts  = $sp->ViewALL();
 
                 for ($i = 0; $i<=$numberOfParts; $i++){
                     echo "<tr>";
                     echo "<td>".$sp->ID[$i]."</td>";
                    // echo "<td><img src=" .'../image/'.$sp->Picture[$i]." alt='not found' width='130px' height='130px'></td>";
+                    echo "<td>".$sp->Name[$i]."</td>";
                     echo "<td>".$sp->OEM[$i]."</td>";
 
                     echo "<td>".$sp->Price[$i]."</td>";

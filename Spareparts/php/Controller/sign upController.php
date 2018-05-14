@@ -1,10 +1,8 @@
 <?php
 
 require_once("../Model/UserModel.php");
-require_once("../Model/UserTypeModel.php");
 require_once "../ConnectionToDB.php";
-?>
-<?php
+
 
 if (isset($_POST['submit'])){
     $fname = $_POST['fname'];
@@ -23,8 +21,12 @@ if (isset($_POST['submit'])){
     $user->Email = $email;
     $user->Username=$username;
     $user->Password = md5($password);
-    $user->UserTypeID = $_POST['position'];
 
-    $user->AdminAdd();
+
+    $user->AddClient();
+
+
+
 }
 ?>
+

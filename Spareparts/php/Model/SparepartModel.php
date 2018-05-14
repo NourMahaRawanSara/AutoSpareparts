@@ -88,6 +88,7 @@
   }
 return $i;
 }
+
       public function CounterSP(){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
