@@ -20,77 +20,89 @@ require_once "../ConnectionToDB.php";
 <body>
 <!-- Header -->
 <div class="allcontain">
-<div class="header">
-<ul class="givusacall">
-<li>Give us a call : +66666666 </li>
-</ul>
-</div>
-<!-- Navbar Up -->
-<nav class="topnavbar navbar-default topnav">
-<div class="container">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
-<span class="sr-only"> Toggle navigaion</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<!--<a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>-->
-</div>
-</div>
-<div class="collapse navbar-collapse" id="upmenu">
-<ul class="nav navbar-nav" id="navbarontop">
-<li class="active"><a href="../AdminLogin.php">HOME</a> </li>
+    <div class="header">
+    <ul class="givusacall">
+    <li>Give us a call : +66666666 </li>
+    </ul>
+    </div>
+    <!-- Navbar Up -->
+    <nav class="topnavbar navbar-default topnav">
+    <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
+    <span class="sr-only"> Toggle navigaion</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </button>
+    <!--<a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>-->
+    </div>
+    </div>
+    <div class="collapse navbar-collapse" id="upmenu">
+    <ul class="nav navbar-nav" id="navbarontop">
+    <li class="active"><a href="../AdminLogin.php">HOME</a> </li>
 
-</ul>
-</div>
-</nav>
-<div id="content">
-<div id="content2">
-<div id="form1">
-<form method="POST" action="../Controller/AddEmpController.php">
+    </ul>
+    </div>
+    </nav>
+    <div id="content">
+        <div id="content2">
+            <div id="form1">
+                <form method="POST" action="../Controller/AddEmpController.php">
 
-<strong>First Name:<strong><br>
-<input type="text" name="fname" placeholder="Firstname" required><br>
+                    <div id="viewAjax">
+                        <strong>First Name:<strong><br>
+                                <div id="viewAjax">
+                                    <input type="text" name="fname" placeholder="Firstname" onblur="CheckUserName(this.value)" required><br>
+                                </div>
 
-<strong>Last Name:<strong><br>
-<input type="text" name="Lname" placeholder="Lastname" required><br>
+                    </div>
 
-<strong>Email:<strong><br>
-<input type="email" name="Email" placeholder="Email" required><br>
+                        <strong>Last Name:<strong><br>
+                        <input type="text" name="Lname" placeholder="Lastname" required><br>
 
-<strong>Username:<strong><br>
-<input type="text" name="Username" placeholder="Username" required><br>
+                        <strong>Email:<strong><br>
+                        <input type="email" name="Email" placeholder="Email" required><br>
 
-
-<strong>Password:<strong><br>
-<input type="password" name="password" placeholder="Password" required><br>
-
-<strong>Mobile Number:<strong><br>
-        <input type="tel" id="tel"name="Mobile" placeholder="Mobile Number" required><br>
+                        <strong>Username:<strong><br>
+                        <input type="text" name="Username" placeholder="Username" required><br>
 
 
-        <strong>Birthdate:</strong><br>
-        <input type="date" name="DateOfBirth"><br>
-        <br>
-        <?php
-        echo "Add User:.<br>";
-        $Usertype = new UserTypeModel();
-        $position = $Usertype->View();
+                        <strong>Password:<strong><br>
+                        <input type="password" name="password" placeholder="Password" required><br>
 
-        echo "<select name='position'>";
-        for ($i=0; $i<=$position; $i++){
-            echo "<option
-                    value='".$Usertype->ID[$i]."'>".$Usertype->Position[$i]."
-            </option>";
-        }
-        echo "</select>.<br>";
-        ?>
+                        <strong>Mobile Number:<strong><br>
+                        <input type="tel" id="tel"name="Mobile" placeholder="Mobile Number" required><br>
 
-        <input type="submit" name="submit" value="Submit">
-        <input type="reset" value="Cancel">
-</div>
-    </form>
+
+                        <strong>Birthdate:</strong><br>
+                        <input type="date" name="DateOfBirth"><br>
+                        <br>
+                    <?php
+                    echo "Usertype" . "<br>";
+                    $Usertype = new UserTypeModel();
+                    $position = $Usertype->View();
+
+                    echo "<select name='position'>";
+                    for ($i=0; $i<=$position; $i++){
+                        echo "<option
+                                value='".$Usertype->ID[$i]."'>".$Usertype->Position[$i]."
+                        </option>";
+                    }
+                    echo "</select>.<br>";
+                    ?>
+
+                    <input type="submit" name="submit" value="Submit">
+                    <input type="reset" value="Cancel">
+            </form>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
 <script>
     var inputEl = document.getElementById('tel');
     var goodKey = '0123456789+ ';
@@ -113,9 +125,23 @@ require_once "../ConnectionToDB.php";
     }
 
     inputEl.addEventListener('input', checkInputTel);
+
+    function CheckUserName(x) {
+        if(x == ""){
+
+        }
+        else{var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("viewAjax").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "ajaxCheckUsername.php?q=" + x , true);
+            xmlhttp.send();
+        }
+    }
+
 </script>
-</div>
-</div>
-</div>
-</body>
 </html>
+
+
