@@ -37,29 +37,35 @@
       <file leaf-file-name="AddEmp.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/Viewer/AddEmp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-379">
-              <caret line="63" column="103" selection-start-line="63" selection-start-column="103" selection-end-line="63" selection-end-column="103" />
+            <state relative-caret-position="161">
+              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/Model/UserModel.php">
+      <file leaf-file-name="invoiceGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/Viewer/invoiceGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-404">
-              <caret line="244" selection-start-line="244" selection-end-line="244" />
+            <state relative-caret-position="601">
+              <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajaxCheckUsername.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/php/Viewer/ajaxCheckUsername.php">
+      <file leaf-file-name="BillInvoice.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/Viewer/BillInvoice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="118" selection-start-line="10" selection-start-column="118" selection-end-line="10" selection-end-column="118" />
-              <folding>
-                <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EncyptionClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/Model/EncyptionClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -77,6 +83,9 @@
         <option value="$PROJECT_DIR$/php/Controller/AddEmpController.php" />
         <option value="$PROJECT_DIR$/php/Viewer/AddEmp.php" />
         <option value="$PROJECT_DIR$/php/Viewer/ajaxCheckUsername.php" />
+        <option value="$PROJECT_DIR$/php/Model/EncyptionClass.php" />
+        <option value="$PROJECT_DIR$/php/Viewer/invoiceGenerator.php" />
+        <option value="$PROJECT_DIR$/php/Viewer/BillInvoice.php" />
       </list>
     </option>
   </component>
@@ -172,7 +181,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1074000" />
+    <option name="totallyTimeSpent" value="7125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="973" extended-state="6" />
@@ -265,10 +274,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/Viewer/AddEmp.php">
+    <entry file="file://$PROJECT_DIR$/php/Viewer/ajaxCheckUsername.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379">
-          <caret line="63" column="103" selection-start-line="63" selection-start-column="103" selection-end-line="63" selection-end-column="103" />
+        <state relative-caret-position="165">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -279,6 +291,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/php/Viewer/AddEmp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-379">
+          <caret line="63" column="103" selection-start-line="63" selection-start-column="103" selection-end-line="63" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/AdminLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Viewer/AddEmp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Controller/AddEmpController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Model/UserModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3450">
+          <caret line="230" column="39" lean-forward="true" selection-start-line="230" selection-start-column="39" selection-end-line="230" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Controller/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/ClientLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/AdminLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Viewer/ajaxRemoveWarning" />
+    <entry file="file://$PROJECT_DIR$/php/Controller/AddEmpController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Viewer/AddEmp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/php/Viewer/ajaxCheckUsername.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -286,6 +369,37 @@
           <folding>
             <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Model/CommissionModel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Model/UserModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Model/EncyptionClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Viewer/invoiceGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Viewer/BillInvoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
         </state>
       </provider>
     </entry>
