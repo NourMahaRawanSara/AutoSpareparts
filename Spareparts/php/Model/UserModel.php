@@ -242,18 +242,7 @@
           return $i;
       }
 
-      public function checkUsername($username){
-          $db = ConnectionToDB::getInstance();
-          $mysqli = $db->getConnection();
-          $sql = "SELECT * FROM `user`
-                  WHERE `Username` = '$username'
-                ";
-          $result = $mysqli->query($sql);
-if (mysqli_num_rows($result) > 0) {
-    $name_error = "Sorry... username already taken";
-}
-return $name_error;
-      }
+
       public function ViewAccountant()
       {
           $db = ConnectionToDB::getInstance();
@@ -315,6 +304,16 @@ return $name_error;
           if($sql){
               echo 'deleted';
           }
+      }
+
+      public function checkForAvailableUsername($username){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+          $sql = "SELECT * FROM user
+                  WHERE Username = '".$username."'
+                    ";
+          $result = $mysqli->query($sql);
+          return mysqli_num_rows($result);
       }
 
   }

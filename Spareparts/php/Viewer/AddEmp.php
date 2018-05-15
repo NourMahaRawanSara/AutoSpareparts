@@ -60,7 +60,10 @@ require_once "../ConnectionToDB.php";
 <input type="email" name="Email" placeholder="Email" required><br>
 
 <strong>Username:<strong><br>
-<input type="text" name="Username" placeholder="Username" required><br>
+        <div id="viewAjax">
+            <input type="text" name="Username" placeholder="Username" onblur="CheckUserName(this.value)" required><br>
+        </div>
+
 
 
 <strong>Password:<strong><br>
@@ -110,6 +113,21 @@ require_once "../ConnectionToDB.php";
 
     var filterInput = function(val) {
         return (goodKey.indexOf(val) > -1);
+    }
+
+    function CheckUserName(x) {
+        if(x == ""){
+
+        }
+        else{var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("viewAjax").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "ajaxCheckUsername.php?q=" + x , true);
+            xmlhttp.send();
+        }
     }
 
     inputEl.addEventListener('input', checkInputTel);

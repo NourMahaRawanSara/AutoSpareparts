@@ -24,7 +24,6 @@ if (isset($_POST['submit'])){
     $user->Username=$username;
     $user->Password = $password;
     $user->UserTypeID = $_POST['position'];
-$user->checkUsername($username);
     $user->AdminAdd();
 }
 ?>
