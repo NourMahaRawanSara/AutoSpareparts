@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36911ae8-2906-436d-841a-8a73232ce9ad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Controller/AddEmpController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Controller/AddEmpController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Controller/BillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Controller/BillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Controller/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Controller/addPController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Controller/addPController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spareparts/php/ConnectionToDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/ConnectionToDB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spareparts/php/Controller/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Controller/InvoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spareparts/php/Model/BillModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Model/BillModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Model/SparepartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Model/SparepartModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spareparts/php/Model/OrderModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Model/OrderModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spareparts/php/Model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Model/UserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Viewer/AddEmp.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Viewer/AddEmp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Viewer/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Viewer/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Viewer/OrderList.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Viewer/OrderList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Viewer/addP.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Viewer/addP.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/Viewer/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/Viewer/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spareparts/php/product list.php" beforeDir="false" afterPath="$PROJECT_DIR$/Spareparts/php/product list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spareparts/php/invoice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spareparts/php/invoiceGenerator.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,32 +19,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EmployeeList.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/EmployeeList.php">
+      <file leaf-file-name="BillModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/BillModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="81" column="12" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
+            <state relative-caret-position="290">
+              <caret line="183" column="11" selection-start-line="181" selection-start-column="9" selection-end-line="183" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AjaxViewSparepart.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewSparepart.php">
+      <file leaf-file-name="insert.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spareparts/php/insert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+            <state relative-caret-position="176">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spareparts/php/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="96" column="39" lean-forward="true" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
               <folding>
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SparepartModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/SparepartModel.php">
+      <file leaf-file-name="fetch.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spareparts/php/fetch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotificationModel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/NotificationModel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+              <folding>
+                <element signature="e#104#111#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectionToDB.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spareparts/php/ConnectionToDB.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/OrderGenerator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BillInvoice.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/BillInvoice.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -62,65 +101,8 @@
       <file leaf-file-name="OrderModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/OrderModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BillModel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/BillModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="141" column="12" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BillController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/BillController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/product list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="103" column="125" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="125" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SparepartList.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/SparepartList.php">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="22">
-              <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addP.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/addP.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="58" column="79" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AjaxViewEmployees.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewEmployees.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -158,6 +140,7 @@
       <find>company</find>
       <find>OrderType</find>
       <find>total</find>
+      <find>InvoiceID</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,17 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Spareparts/php/ClientLogin.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/Model/PagesModel.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/edithtml.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/submitP.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/Profile.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/sign up.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/AccountantLogin.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewResources.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewEmployees.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/Viewer/ControllingResources.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/logout.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Controller/loginController.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Controller/sign upController.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/sign up.php" />
@@ -184,7 +156,6 @@
         <option value="$PROJECT_DIR$/Spareparts/php/Controller/ControllingResourcesController.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/ResourcesList.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Bill.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/Controller/InvoiceController.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/observer.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/AddO.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/EmployeeList.php" />
@@ -196,11 +167,9 @@
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/AccountantList.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Model/ImporterTypeModel.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/invoiceGenerator.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/invoice.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/login.php" />
         <option value="$PROJECT_DIR$/Spareparts/index.html" />
         <option value="$PROJECT_DIR$/Spareparts/php/Controller/AddEmpController.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/Model/UserModel.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/AddEmp.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/Order.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/OrderList.php" />
@@ -214,9 +183,23 @@
         <option value="$PROJECT_DIR$/Spareparts/php/product list.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewSparepart.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Viewer/addP.php" />
-        <option value="$PROJECT_DIR$/Spareparts/php/Model/OrderModel.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Controller/BillController.php" />
         <option value="$PROJECT_DIR$/Spareparts/php/Model/BillModel.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Controller/InvoiceController.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/invoice.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Controller/OrderInvoiceController.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Viewer/BillInvoice.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Viewer/invoiceGenerator.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Viewer/OrderGenerator.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Model/OrderModel.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Viewer/OrderInvoice.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Model/UserModel.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/index.php.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/ConnectionToDB.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/insert.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/index.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/fetch.php" />
+        <option value="$PROJECT_DIR$/Spareparts/php/Model/NotificationModel.php" />
       </list>
     </option>
   </component>
@@ -340,18 +323,18 @@
       <workItem from="1525982020486" duration="494000" />
       <workItem from="1525983905371" duration="489000" />
       <workItem from="1525985174187" duration="4388000" />
-      <workItem from="1526024997719" duration="69817000" />
+      <workItem from="1526024997719" duration="81860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182731000" />
+    <option name="totallyTimeSpent" value="194774000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23352855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24011713" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32913387" />
@@ -379,86 +362,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/ControllingResourcesModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/InvoiceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/observer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="82" column="37" lean-forward="true" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/AddO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="2" lean-forward="true" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/CommissionModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="31" column="7" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/AccountantListController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/AdminLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1068">
-          <caret line="383" column="22" lean-forward="true" selection-start-line="381" selection-start-column="16" selection-end-line="383" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/invoices/fpdf/invoice_tem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="18" lean-forward="true" selection-end-line="136" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/liveSearch.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/fpdf181/fpdf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39712">
-          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/fpdf181/invoice_tem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/invoices/controller/fill_invoice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -517,13 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/invoice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -545,13 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
           <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/UserModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="253" column="19" selection-start-line="253" selection-start-column="19" selection-end-line="253" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -649,23 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/addPController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewEmployees.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/EmployeeList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -687,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/SparepartModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewSparepart.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -704,31 +569,163 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/addP.php">
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/SparepartModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="58" column="79" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
+        <state relative-caret-position="540">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/OrderModel.php">
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/AjaxViewEmployees.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/addP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/BillController.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/addPController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/InvoiceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/invoiceGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="57" column="27" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Controller/OrderInvoiceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/OrderInvoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/index.php.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <caret line="128" column="2" selection-start-line="128" selection-start-column="2" selection-end-line="128" selection-end-column="2" />
+          <folding>
+            <element signature="e#104#111#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/BillModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="141" column="12" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
+        <state relative-caret-position="290">
+          <caret line="183" column="11" selection-start-line="181" selection-start-column="9" selection-end-line="183" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/OrderModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/UserModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="282" column="40" lean-forward="true" selection-start-line="282" selection-start-column="40" selection-end-line="282" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/OrderGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Viewer/BillInvoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/ConnectionToDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="96" column="39" lean-forward="true" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/fetch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spareparts/php/Model/NotificationModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#104#111#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
