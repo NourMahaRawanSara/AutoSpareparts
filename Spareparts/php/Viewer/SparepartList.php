@@ -2,8 +2,9 @@
 session_start();
 require("../ConnectionToDB.php");
 //require("User.php");
-require_once ("../Model/OrderModel.php");
-require_once ("../Model/OrderTypeModel.php")
+require_once ("../Model/SparepartModel.php");
+require_once ("../Model/CorruptedModel.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -77,14 +78,14 @@ require_once ("../Model/OrderTypeModel.php")
 </div>
 <div style=" text-align: center; padding-top:30px;">
     <?php
-    echo "Order:.<br>";
-    $order = new OrderTypeModel();
-    $type = $order->View();
+    echo "Spare Parts:.<br>";
+    $sparepart = new CorruptedModel();
+    $Corrupted = $sparepart->View();
 
-    echo "<select name='ordertypeID' onchange='getOrder(this.value)' id='OrdertypeID'>";
-    for ($i=0; $i<=$type; $i++){
+    echo "<select name='Corrupted' onchange='getSP(this.value)' id='Corrupted'>";
+    for ($i=0; $i<=$Corrupted; $i++){
         echo "<option
-                value='".$order->ID[$i]."'>".$order->IsOnline[$i]."
+                value='".$sparepart->ID[$i]."'>".$sparepart->Type[$i]."
         </option>";
     }
     echo "</select>.<br>";
@@ -100,18 +101,18 @@ require_once ("../Model/OrderTypeModel.php")
 
 </div>
 <div style=" text-align: center; padding-top:50px;">
-    <a href="../Viewer/Order.php"> <button type="button" value="add">Add</button> </a>
-    <a href=""><button type="button" value="edit">update</button> </a>
-    <a href=""><button type="button" value="delete ">delete!</button> </a>
+    <a href="../Viewer/addP.php"> <button type="button" value="add">Add</button> </a>
+    <a href="../editP.php"><button type="button" value="edit">update</button> </a>
+    <a href="../deleteP.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
 <script>
-    function getOrder(OrdertypeID) {
+    function getSP(Corrupted) {
 
         $.ajax({
-            url: "../Controller/AjaxViewOrder.php",
+            url: "../Controller/AjaxViewSparepart.php",
             method: "POST",
             data: {
-                OrderType: OrdertypeID
+                Name: Corrupted
             },
             success: function (answer) {
                 $("#table").html(answer);

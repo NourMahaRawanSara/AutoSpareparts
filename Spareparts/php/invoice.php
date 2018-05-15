@@ -52,9 +52,6 @@ $pdf->Cell(100,5,'Bill to',0,1);
 $pdf->Cell(10,5,'',0,1);
 $pdf->Cell(90,0,$Bill->Fname[$x],0,1);
 
-
-
-
 //$pdf->Cell(10,5,'',0,1);
 //$pdf->Cell(90,0,'[Address]',0,1);
 

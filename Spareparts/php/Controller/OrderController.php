@@ -23,6 +23,6 @@ if (isset($_POST['submit'])){
     //$order->TaxesID=$taxes;
     $order->SparepartID=$sparepart;
     $order->AddOrder();
-header('Location:../invoice.php');
+//header('Location:../invoice.php');
 }
 ?>

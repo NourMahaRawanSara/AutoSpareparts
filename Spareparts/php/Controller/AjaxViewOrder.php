@@ -1,15 +1,26 @@
 <?php
 
-    $ordertypeID = $_REQUEST['OrderTypeID'];
+    $ordertypeID = $_POST['OrderType'];
 
 
     require_once "../ConnectionToDB.php";
     require_once "../Model/OrderModel.php";
+    require_once "../Model/CurrencyModel.php";
+    require_once "../Model/PaymentMethodModel.php";
+    require_once "../Model/SparepartModel.php";
 
 
     $order = new OrderModel();
     $ordertypes = $order->viewSpecificOrder($ordertypeID);
 
+    $Currency=new CurrencyModel();
+    $name=$Currency->View();
+
+    $Payment=new PaymentMethodModel();
+    $Method=$Payment->View();
+
+    $Sparepart=new SparepartModel();
+    $Name=$Sparepart->ViewALL();
 
     if ($ordertypes < 0){
         echo "</br>";
@@ -24,9 +35,7 @@
             <th>Payment Method</th>
             <th>Date of Order</th>
             <th>Currency</th>
-            <th>Taxes</th>
-            <th>Delivery Fees</th>
-            <th>Spare Part</th>";
+           <th>Spare Part</th>";
         echo "</tr>";
 
         echo "</thead>";
@@ -35,13 +44,11 @@
 
             echo "<tr>";
             echo "<td>" . $order->ID[$i] . "</td>";
-            echo "<td>" . $order->paymentMethodID[$i] . "</td>";
+            echo "<td>" . $Payment->Name[$i] . "</td>";
             echo "<td>" . $order->DateOfOrder[$i] . "</td>";
-            echo "<td>".$order->CurrencyID[$i]."</td>";
-            echo "<td>".$order->TaxesID[$i]."</td>";
-            echo "<td>".$order->DeliveryFees[$i]."</td>";
-//            echo "<td>".$user->UserTypeID[$i]."</td>";
-            echo "<td>".$order->SparepartID[$i]."</td>";
+            echo "<td>".$Currency->Name[$i]."</td>";
+
+            echo "<td>".$Sparepart->Name[$i]."</td>";
 
 
             echo "</tr>";

@@ -67,7 +67,7 @@ require_once "../ConnectionToDB.php";
 <input type="password" name="password" placeholder="Password" required><br>
 
 <strong>Mobile Number:<strong><br>
-        <input type="tel" name="Mobile" placeholder="Mobile Number" required><br>
+        <input type="tel" id="tel"name="Mobile" placeholder="Mobile Number" required><br>
 
 
         <strong>Birthdate:</strong><br>
@@ -91,7 +91,29 @@ require_once "../ConnectionToDB.php";
         <input type="reset" value="Cancel">
 </div>
     </form>
+<script>
+    var inputEl = document.getElementById('tel');
+    var goodKey = '0123456789+ ';
 
+    var checkInputTel = function(e) {
+        var key = (typeof e.which == "number") ? e.which : e.keyCode;
+        var start = this.selectionStart,
+            end = this.selectionEnd;
+
+        var filtered = this.value.split('').filter(filterInput);
+        this.value = filtered.join("");
+
+        /* Prevents moving the pointer for a bad character */
+        var move = (filterInput(String.fromCharCode(key)) || (key == 0 || key == 8)) ? 0 : 1;
+        this.setSelectionRange(start - move, end - move);
+    }
+
+    var filterInput = function(val) {
+        return (goodKey.indexOf(val) > -1);
+    }
+
+    inputEl.addEventListener('input', checkInputTel);
+</script>
 </div>
 </div>
 </div>

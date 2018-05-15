@@ -2,7 +2,8 @@
 require_once "../ConnectionToDB.php";
   //require("Product.php");
 require_once("../Model/SparepartModel.php");
-require_once ("../Model/CountryofOriginModel.php")
+require_once ("../Model/CountryofOriginModel.php");
+require_once ("../Model/CorruptedModel.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,10 +55,13 @@ require_once ("../Model/CountryofOriginModel.php")
 	 <div id="content2">
 		 <form method="POST" action="../Controller/addPController.php">
 <div id="form1">
-	<strong>Picture:<strong><br>
-		<center><input type="file" name="pic" accept="image/*"id="img"></center>
+    <strong>Picture:<strong><br>
+		<center><input type="file" name="pic" accept="image/*"id="img" required></center>
 <br>
-<strong>OEM:<strong><br>
+    <strong> Item Name: </strong><br>
+<input type="text" name="name" placeholder="Enter Item's Name" required><br>
+
+        <strong>OEM:<strong><br>
 <input type="text" name="OEM" placeholder="OEM" required><br>
 
 <strong>Internal Code:<strong><br>
@@ -67,10 +71,20 @@ require_once ("../Model/CountryofOriginModel.php")
 	<input type="text" name="Pcode" placeholder="Exporter Code" required><br>
 
 
- <strong>Is the item corrupted?:<strong><br>Yes
-	 <input type="radio" name="corr" ><br>No
-	 <input type="radio" name="corr"><br>
-<?php
+         <?php
+         echo "Is the item corrupted?:.<br>";
+         $curr = new CorruptedModel();
+         $item = $curr->View();
+
+         echo "<select name='corrupted'>";
+         for ($i=0; $i<=$item; $i++){
+             echo "<option
+                value='".$curr->ID[$i]."'>".$curr->Type[$i]."
+        </option>";
+         }
+         echo "</select>.<br>";
+         ?>
+         <?php
 echo "Country of Origin:.<br>";
 $Country = new CountryofOriginModel();
 $COO = $Country->View();
@@ -83,6 +97,8 @@ for ($i=0; $i<=$COO; $i++){
 }
 echo "</select>.<br>";
 ?>
+         <strong>Quantity<strong><br>
+                 <input type="text" name="Quantity" placeholder="Quantity" required><br>
 
 
 <strong>Price:</strong><br>

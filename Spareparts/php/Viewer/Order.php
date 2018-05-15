@@ -93,13 +93,13 @@ require_once("../Model/SparepartModel.php");
 
                 <?php
                 echo "Currency:.<br>";
-                $tax = new CurrencyModel();
-                $method = $tax->view();
+                $curr = new CurrencyModel();
+                $method = $curr->view();
 
                 echo "<select name='curr'>";
                 for ($i=0; $i<=$method; $i++){
                     echo "<option
-                            value='".$tax->ID[$i]."'>".$tax->Name[$i]."
+                            value='".$curr->ID[$i]."'>".$curr->Name[$i]."
                     </option>";
                 }
                 echo "</select>.<br>";

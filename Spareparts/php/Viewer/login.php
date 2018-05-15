@@ -44,7 +44,7 @@ $_SESSION['auth'] = "true";
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="../index.html">HOME</a> </li>
+				<li class="active"><a href="../../index.html">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
@@ -70,7 +70,7 @@ $_SESSION['auth'] = "true";
             <br>
             <input type="submit" value="Submit" name="submit">
 			<input type="button" value="Cancel"><br>
-			<h4><a href="../../sign up.php">Don't have an account?</a></h4><br><br>
+			<h4><a href="sign up.php">Don't have an account?</a></h4><br><br>
 			</div>
             </form>
 			</div>

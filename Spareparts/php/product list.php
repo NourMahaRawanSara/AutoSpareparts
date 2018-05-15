@@ -105,7 +105,7 @@
                     echo "<td>".$sp->OEM[$i]."</td>";
                     echo "<td>".$sp->InternalCode[$i]."</td>";
                     echo "<td>".$sp->CompanyProviderCode[$i]."</td>";
-                    echo "<td>".$sp->IsCorrupted[$i]."</td>";
+                    echo "<td>".$sp->IsCorruptedID[$i]."</td>";
                     echo "<td>".$sp->CountryOfOriginID[$i]."</td>";
                     echo "<td>".$sp->Price[$i]."</td>";
                     echo "</tr>";

@@ -26,6 +26,32 @@
       public function __construct(){
 
       }
+      public function QuantityDeduct($Quantity,$InvoiceID){
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+
+
+          $sql="SELECT bill.OrderDetailsID ,
+orderdetails.Quantity
+FROM bill
+INNER JOIN orderdetails 
+ON 
+bill.OrderDetailsID=orderdetails.ID
+and bill.ID= '$InvoiceID'";
+          $result = $mysqli->query($sql);
+          while($row =mysqli_fetch_array($result)){
+              $Quantity=$row['Quantity'];
+
+          }
+          $final=-$Quantity;
+          if(!$result){
+              die($mysqli->error);
+          }
+
+return $final;
+
+
+      }
       public function invoices($InvoiceID){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();

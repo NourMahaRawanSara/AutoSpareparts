@@ -37,8 +37,10 @@ if (isset($_POST['submit'])){
     //$bill->TotalAmount=$TAmount;
     $bill->TotalAmount=$total;
     $bill->importertype=$Imp;
+    $finalQuantity=$bill->QuantityDeduct($quantity,$Sparepart);
+    echo $finalQuantity;
      $bill->AddBill();
-    header('location:../invoiceGenerator.php');
+    //header('location:../invoiceGenerator.php');
    
 
 }
