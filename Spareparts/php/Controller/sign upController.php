@@ -20,7 +20,7 @@ if (isset($_POST['submit'])){
     $user->Mobile=$mobile;
     $user->Email = $email;
     $user->Username=$username;
-    $user->Password = md5($password);
+    $user->Password =$password;
 
 
     $user->AddClient();
