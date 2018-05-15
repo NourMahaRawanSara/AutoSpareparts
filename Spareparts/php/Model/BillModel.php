@@ -52,6 +52,21 @@ return $final;
 
 
       }
+
+      public function calc_stat()
+      {
+          $db = ConnectionToDB::getInstance();
+          $mysqli = $db->getConnection();
+          $sql=" SELECT Distinct bill.`Total Amount`, user.ID from bill inner join user on user.ID = bill.UserID";
+          $result = $mysqli->query($sql);
+          $i=-1;
+          while($row =mysqli_fetch_array($result)){
+              $i++;
+              $this->ID[$i]=$row['ID'];
+              $this->TotalAmount[$i]=$row['Total Amount'];
+          }
+          return $i;
+      }
       public function invoices($InvoiceID){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
@@ -97,9 +112,9 @@ and bill.ID= '$InvoiceID'";
               $this->subtotal[$i] = $row['Subtotal'];
               $this->SPName[$i] = $row['Name'];
               $this->price[$i]=$row['Price'];
-              $this->DateOfDelivery=$row['DateOfDelivery'];
+              $this->DateOfDelivery[$i]=$row['DateOfDelivery'];
               //$this->importertype=$row['ImporterTypeID'];
-              $this->importertype=$row['Type'];
+              $this->importertype[$i]=$row['Type'];
           }
 
           return $i;
