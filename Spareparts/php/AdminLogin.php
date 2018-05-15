@@ -74,7 +74,7 @@ if(!isset($_SESSION['userID']))
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Employee <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdowncostume">
-                        <li><a href="Viewer/AddEmp.php">Add User</a></li>
+                        <li><a href="AddEmp.php">Add User</a></li>
                         <li><a href="editE.php">Edit User</a></li>
                         <li><a href="DeleteE.php">Delete User</a></li>
                          </ul>
@@ -84,7 +84,7 @@ if(!isset($_SESSION['userID']))
 
 			</ul>
             <ul class="logreg">
-                <a href="Controller/logout.php">Logout</a>
+                <a href="logout.php">Logout</a>
 
             </ul>
 

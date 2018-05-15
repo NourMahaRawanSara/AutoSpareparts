@@ -1,4 +1,0 @@
-<?php
-echo "<input type='text' name='fname' placeholder='Firstname' value='$username' onblur='removeWarning()' required><br>";
-
-?>

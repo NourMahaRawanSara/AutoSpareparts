@@ -241,9 +241,12 @@
           }
           return $i;
       }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 2f1e495... check for username
       public function checkUsername($username){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
@@ -256,7 +259,10 @@ if (mysqli_num_rows($result) > 0) {
 }
 return $name_error;
       }
+<<<<<<< HEAD
 >>>>>>> 98d08ceaa3c72a438e5f352021c3874eb2cc3bcd
+=======
+>>>>>>> parent of 2f1e495... check for username
       public function ViewAccountant()
       {
           $db = ConnectionToDB::getInstance();
@@ -318,16 +324,6 @@ return $name_error;
           if($sql){
               echo 'deleted';
           }
-      }
-
-      public function checkForAvailableUsername($username){
-          $db = ConnectionToDB::getInstance();
-          $mysqli = $db->getConnection();
-          $sql = "SELECT * FROM user
-                  WHERE Username = '".$username."'
-                    ";
-          $result = $mysqli->query($sql);
-          return mysqli_num_rows($result);
       }
 
   }
