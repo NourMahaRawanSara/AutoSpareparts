@@ -241,6 +241,7 @@
           }
           return $i;
       }
+
       public function checkUsername($username){
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();

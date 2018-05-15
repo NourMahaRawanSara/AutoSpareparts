@@ -19,7 +19,7 @@
       public $price;
       public $DateOfDelivery;
       public $importertype;
-      public $CompanyName;
+      //public $CompanyName;
 
 
 
@@ -99,7 +99,7 @@ and bill.ID= '$InvoiceID'";
               $this->price[$i]=$row['Price'];
               $this->DateOfDelivery=$row['DateOfDelivery'];
               //$this->importertype=$row['ImporterTypeID'];
-              $this->CompanyName=$row['Type'];
+              $this->importertype=$row['Type'];
           }
 
           return $i;
