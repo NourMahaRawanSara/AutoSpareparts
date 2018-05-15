@@ -4,12 +4,16 @@ require_once ('../Model/BillModel.php');
 require_once ('../Model/UserModel.php');
 require_once ('../Model/ImporterTypeModel.php');
 require_once ('../ConnectionToDB.php');
+require_once ('../Model/EncyptionClass.php');
 
-$InvoiceID=$_REQUEST['InvoiceID'];
 session_start();
+$encryptedInvoiceID=$_REQUEST['InvoiceID'];
+$decrypt = new EncyptionClass();
+
+//echo "enc: ". $encryptedInvoiceID;
 
 $Bill = new BillModel();
-$x = $Bill->invoices($InvoiceID);
+$x = $Bill->invoices($encryptedInvoiceID);
 
 
 $pdf = new FPDF ('p' , 'mm' , 'A4');

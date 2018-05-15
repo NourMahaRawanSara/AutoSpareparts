@@ -2,6 +2,7 @@
 
 require_once ('../Model/BillModel.php');
 require_once ('../ConnectionToDB.php');
+require_once ('../Model/EncyptionClass.php');
 
 ?>
 <!DOCTYPE html>
@@ -59,6 +60,7 @@ Select Invoice
         <?php
         $Invoice=new BillModel();
         $InID=$Invoice->View();
+        $encrypt = new EncyptionClass();
         for ($i=0; $i<=$InID; $i++){
             echo "<option
                 value='".$Invoice->ID[$i]."'>".$Invoice->ID[$i]."
