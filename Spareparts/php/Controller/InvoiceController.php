@@ -11,5 +11,5 @@ $bill = new BillModel();
 $billID = $bill->viewSpecificBill($billID);
 
 
-echo $billID;
+//echo $billID;
 ?>
