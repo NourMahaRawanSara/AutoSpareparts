@@ -53,23 +53,8 @@ require_once ("../Model/ControllingResourcesModel.php")
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="#">HOME</a> </li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee <span class="caret"></span></a>
-					<ul class="dropdown-menu dropdowncostume">
+				<li class="active"><a href="../AdminLogin.php">HOME</a> </li>
 
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">spare parts <span class="caret"></span></a>
-					<ul class="dropdown-menu dropdowncostume">
-
-					</ul>
-				</li>
-				<li>
-					<a href="../contact.php">CONTACT</a>
-
-				</li>
 			</ul>
 		</div>
 	</nav>
@@ -98,8 +83,6 @@ require_once ("../Model/ControllingResourcesModel.php")
 </div>
 <div style=" text-align: center; padding-top:50px;">
 <a href="../ControllingResources.php"> <button type="button" value="add">Add</button> </a>
-<a href="../editE.php"><button type="button" value="edit">update</button> </a>
-<a href="../deleteE.php"><button type="button" value="delete ">delete!</button> </a>
 </div>
 
 <script>

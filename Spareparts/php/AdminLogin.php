@@ -51,7 +51,7 @@ if(!isset($_SESSION['userID']))
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="#">HOME</a> </li>
+				<li class="active"><a href="AdminLogin.php">HOME</a> </li>
 				<!--<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LIST <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
@@ -74,17 +74,25 @@ if(!isset($_SESSION['userID']))
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Employee <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdowncostume">
-                        <li><a href="AddEmp.php">Add User</a></li>
+                        <li><a href="Viewer/AddEmp.php">Add User</a></li>
                         <li><a href="editE.php">Edit User</a></li>
                         <li><a href="DeleteE.php">Delete User</a></li>
                          </ul>
                 </li>
 
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdowncostume">
+
+                        <li><a href="Viewer/ControllingResources.php">Add resources</a></li>
+                        <li><a href="Viewer/ResourcesList.php">View Resources</a></li>
+                    </ul>
+                </li>
 
 
 			</ul>
             <ul class="logreg">
-                <a href="logout.php">Logout</a>
+                <a href="Controller/logout.php">Logout</a>
 
             </ul>
 

@@ -35,7 +35,7 @@ if(!isset($_SESSION['userID']))
 
 			</ul>
 			<ul class="logreg">
-                <a href="logout.php">Logout</a>
+                <a href="Controller/logout.php">Logout</a>
 
 			</ul>
 	</div>
@@ -60,7 +60,7 @@ if(!isset($_SESSION['userID']))
 
 				</li>
 				<li>
-					<a href="bill.php">Fill new bill</a>
+					<a href="Viewer/Bill.php">Fill new bill</a>
 
 				</li>
 
@@ -70,7 +70,7 @@ if(!isset($_SESSION['userID']))
 
 				</li>
                 <li>
-                    <a href="">View Bill</a>
+                    <a href="Viewer/invoiceGenerator.php">View Bill</a>
 
                 </li>
 

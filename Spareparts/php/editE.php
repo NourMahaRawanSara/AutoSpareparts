@@ -44,7 +44,7 @@ require_once("Model/UserModel.php");
 		</div>
 		<div class="collapse navbar-collapse" id="upmenu">
 			<ul class="nav navbar-nav" id="navbarontop">
-				<li class="active"><a href="index.html">HOME</a> </li>
+				<li class="active"><a href="AdminLogin.php">HOME</a> </li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LISTS <span class="caret"></span></a>
 					<ul class="dropdown-menu dropdowncostume">
@@ -61,30 +61,43 @@ require_once("Model/UserModel.php");
 	 <div id="content2">
              <form method="POST" action="">
 			<div id="form1">
-        
+
+                <?php
+                echo "User Name:.<br>";
+                $userID = new UserModel();
+                $User = $userID->ViewAll();
+
+                echo "<select name='userid'>";
+                for ($i=0; $i<=$User; $i++){
+                    echo "<option
+                            value='".$userID->ID[$i]."'>".$userID->Username[$i]."
+                    </option>";
+                }
+                echo "</select>.<br>";
+                ?>
 
           <strong>First Name:<strong><br>
-         <input type="text" name="fname"  value="<?php echo $fname ?>" required><br>
+         <input type="text" name="fname"  value="" required><br>
 
         <strong>Last Name:<strong><br>
-         <input type="text" name="Lname" placeholder="Lastname"value="<?php echo $lname; ?>" required><br>
+         <input type="text" name="Lname" placeholder="Lastname"value="" required><br>
 
          <strong>Email:<strong><br>
-           <input type="email" name="Email" placeholder="Email" value="<?php echo $email; ?>" required><br>
+           <input type="email" name="Email" placeholder="Email" value="" required><br>
 
            <strong>Username:<strong><br>
-            <input type="text" name="Username" placeholder="Username" value="<?php echo $username; ?>"required><br>
+            <input type="text" name="Username" placeholder="Username" value=""required><br>
 
 
            <strong>Password:<strong><br>
-             <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>"required><br>
+             <input type="password" name="password" placeholder="Password" value=""required><br>
 
              <strong>Mobile Number:<strong><br>
-               <input type="tel" name="Mobile" placeholder="Mobile Number" value="<?php echo $mobile; ?>"required><br>
+               <input type="tel" name="Mobile" placeholder="Mobile Number" value=""required><br>
 
 
           <strong>Birthdate:</strong><br>
-                <input type="date" name="DateOfBirth"value="<?php echo $DOB; ?>"><br>
+                <input type="date" name="DateOfBirth"value=""><br>
           <br>
 
               <input type="submit" name="submit" value="Submit">
@@ -107,14 +120,15 @@ require_once("Model/UserModel.php");
       $password = $_POST['password'];
 
       $user = new UserModel;
-      $user->firstname = $fname;
-      $user->lastname=$lname;
+      $user->ID = $_POST['userid'];
+      $user->FName = $fname;
+      $user->LName=$lname;
       $user->DOB = $dob;
-      $user->mobile=$mobile;
-      $user->email = $email;
-      $user->username=$username;
-      $user->password = $password;
-    $user->Edit();
+      $user->Mobile=$mobile;
+      $user->Email = $email;
+      $user->Username=$username;
+      $user->Password = $password;
+        $user->Edit();
 
   }
 ?>

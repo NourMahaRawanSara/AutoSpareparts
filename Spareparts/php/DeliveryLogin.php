@@ -8,7 +8,7 @@ if(!isset($_SESSION['userID']))
     header('Location: login.php');
     exit();
 }
-echo $userid;
+
 ?>
 <!doctype html>
 <html>
@@ -68,6 +68,10 @@ echo $userid;
 
 				</li>
 
+                <li>
+                    <a href="Controller/logout.php">Logout</a>
+
+                </li>
 
 
 

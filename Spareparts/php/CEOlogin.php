@@ -75,7 +75,7 @@ if(!isset($_SESSION['userID']))
 
 
         <li>
-					<a href="product list.php">Sparepart list</a>
+					<a href="productList.php">Sparepart list</a>
 
 				</li>
 

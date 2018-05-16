@@ -32,7 +32,7 @@ if(!isset($_SESSION['userID']))
 
 			</ul>
 			<ul class="logreg">
-                <a href="logout.php">Logout</a>
+                <a href="Controller/logout.php">Logout</a>
 
 
 			</ul>
@@ -63,7 +63,7 @@ if(!isset($_SESSION['userID']))
 					</ul>
 				</li>
 				<li>
-					<a href="../Catalogue.html">Catalogue</a>
+					<a href="Viewer/SparepartList.php">Catalogue</a>
 
 				</li>
 
@@ -75,7 +75,7 @@ if(!isset($_SESSION['userID']))
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Products <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdowncostume">
-                        <li><a href="addP.php">Add Spare Part</a></li>
+                        <li><a href="Viewer/addP.php">Add Spare Part</a></li>
                         <li><a href="deleteP.php">Delete Spare Part</a></li>
                         <li><a href="editP.php">Edit Spare Part</a></li>
                          </ul>

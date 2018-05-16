@@ -62,17 +62,17 @@ if(!isset($_SESSION['userID']))
 					</ul>
 				</li>
 				<li>
-					<a href="product list.php">Product List</a> 
+					<a href="productList.php">Product List</a>
 
 				</li>
 
 
 				<li>
-					<a href="sales list.php">Sales List</a>
+					<a href="SalesList.php">Sales List</a>
 
 				</li>
         <li>
-					<a href="userList.php">User List</a>
+					<a href="UserList.php">User List</a>
 
 				</li>
         <li>
@@ -81,11 +81,14 @@ if(!isset($_SESSION['userID']))
 				</li>
 
         <li>
-					<a href="product list.php"> Make Order</a>
+					<a href="productList.php"> Make Order</a>
 
 				</li>
 
 
+                <li>
+                    <a href="Controller/logout.php">Logout</a>
+                </li>
 
 
 			</ul>

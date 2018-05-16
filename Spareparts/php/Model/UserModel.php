@@ -98,7 +98,7 @@
           $db = ConnectionToDB::getInstance();
           $mysqli = $db->getConnection();
 
-          $sql = "UPDATE user SET `Fname`='$this->Fname',
+          $sql = "UPDATE user SET `Fname`='$this->FName',
                     `Lname`='$this->LName',`DateOfBirth`='$this->DOB', `Mobile`='$this->Mobile',
                     `Email` = '$this->Email',`Username`='$this->Username',`password`='$this->Password' 
                     WHERE `id` = '$this->ID' ";

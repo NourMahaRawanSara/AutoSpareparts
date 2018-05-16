@@ -32,7 +32,7 @@ if(!isset($_SESSION['userID']))
 
 			</ul>
 			<ul class="logreg">
-                <a href="logout.php">Logout</a>
+                <a href="Controller/logout.php">Logout</a>
 
 			</ul>
 	</div>
@@ -57,7 +57,7 @@ if(!isset($_SESSION['userID']))
 
 				</li>
 				<li>
-					<a href="Order.php">ORDER NOW</a>
+					<a href="Viewer/Order.php">ORDER NOW</a>
 
 				</li>
 
