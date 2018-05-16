@@ -1,6 +1,7 @@
 <?php
 require("../ConnectionToDB.php");
 require_once("../Model/OrderModel.php");
+require_once "../Model/CommentsModel.php";
 
 ?>
 <?php
@@ -23,6 +24,9 @@ if (isset($_POST['submit'])){
     //$order->TaxesID=$taxes;
     $order->SparepartID=$sparepart;
     $order->AddOrder();
-//header('Location:../invoice.php');
+
+    $notify = new CommentsModel();
+    $notify->InsertComment($sparepart);
+    header('Location:../ClientLogin.php');
 }
 ?>
